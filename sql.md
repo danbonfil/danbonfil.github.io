@@ -5,9 +5,9 @@ parent: Languages Library
 nav_order: 4
 ---
 
-# SQL Cheat Sheet: Basic Commands
+# SQL: Basic Commands
 
-Welcome to the SQL Cheat Sheet. This section covers the fundamental commands needed to interact with a database: creating tables, inserting data, and querying information.
+Welcome to the SQL Pages. This section covers the fundamental commands needed to interact with a database: creating tables, inserting data, and querying information.
 
 * **DQL (Data Query Language):** Getting data out (`SELECT`).
 * **DML (Data Manipulation Language):** Putting data in and changing it (`INSERT`, `UPDATE`, `DELETE`).
@@ -152,7 +152,7 @@ DROP TABLE users;
 
 ---
 
-# SQL Cheat Sheet: Intermediate Commands
+# SQL: Intermediate Commands
 Once you master the basics, intermediate SQL allows you to analyze data and combine information from different parts of your database.
 
 ## 6. Joins (Connecting Tables)
@@ -260,7 +260,7 @@ CREATE TABLE products (
 
 ---
 
-# SQL Cheat Sheet: Advanced Commands
+# SQL: Advanced Commands
 Advanced SQL moves beyond simple data retrieval into sophisticated analysis, hierarchical data, and performance optimization.
 
 ## 11. Common Table Expressions (CTEs)
