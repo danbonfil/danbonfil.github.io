@@ -1,0 +1,10 @@
+title: Data Analytics Portal
+description: Stata, SQL, R, and Python Cheat Sheets
+theme: minima
+
+header_pages:
+  - index.md
+  - stata.md
+  - sql.md
+  - r.md
+  - python.md
