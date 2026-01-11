@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Teaching Assistant
-nav_order: 3
+parent: CV
+nav_order: 1
 ---
 
 # Teaching Assistant Work
