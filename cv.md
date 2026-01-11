@@ -4,8 +4,6 @@ title: CV
 nav_order: 2
 ---
 
-# Daniel Bonfil  
-
 <!-- Profile picture with styling -->
 <p align="center">
   <img src="https://www.dropbox.com/scl/fi/hmz7vw9birf2otqdqmfq8/DABP_2025.jpg?rlkey=0omisjbtjvyc0c5i0uuapfh28&st=m9tqz5qz&raw=1" alt="Daniel Bonfil" width="200" style="border-radius: 50%;">
