@@ -1,10 +1,6 @@
-title: Data Analytics Portal
-description: Stata, SQL, R, and Python Cheat Sheets
-theme: minima
+title: Daniel Bonfil Portfolio
+description: Academic Portfolio & Data Analysis Library
+theme: just-the-docs
 
-header_pages:
-  - index.md
-  - stata.md
-  - sql.md
-  - r.md
-  - python.md
+search_enabled: true
+color_scheme: light

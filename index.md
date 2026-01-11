@@ -1,15 +1,9 @@
 ---
-layout: home
+layout: default
 title: Home
+nav_order: 1
 ---
 
-# Data Analytics Cheat Sheets
+# Daniel Bonfil Portfolio
 
-Welcome to your personal data-analysis knowledge base.
-
-Choose a language from the top menu:
-
-- 📊 Stata  
-- 🗄️ SQL  
-- 📈 R  
-- 🐍 Python
+Welcome to my academic and data analysis portfolio.

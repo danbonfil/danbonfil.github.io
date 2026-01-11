@@ -1,6 +1,8 @@
 ---
 layout: default
-title: SQL Cheat Sheet
+title: SQL
+parent: Languages Library
+nav_order: 4
 ---
 
 # SQL Cheat Sheet: Basic Commands
