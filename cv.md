@@ -5,10 +5,6 @@ nav_order: 2
 ---
 
 # Daniel Bonfil  
-**Mexico City, Mexico**  
-📞 (+52) 5554087777  |  📧 danbonfil@gmail.com  |  🔗 LinkedIn: danbonfil  |  💻 GitHub: danybonfil  
-
----
 
 <!-- Profile picture with styling -->
 <p align="center">
@@ -18,8 +14,8 @@ nav_order: 2
 <h1 align="center">Daniel Bonfil</h1>
 
 <p align="center">
-  <strong>PhD Candidate in Administration</strong><br>
-  Fundação Getulio Vargas (FGV EBAPE)
+  <strong>PhD Institutions Policy & Government | MSc Economics</strong><br>
+  Mexico City
 </p>
 
 ---
@@ -109,6 +105,6 @@ Google Ads Search
 
 <div align="center">
 
-🔗 <a href="https://www.linkedin.com/in/danbonfil">LinkedIn</a> &nbsp;&nbsp;&nbsp; 📫 <a href="mailto:danbonfil@gmail.com">Email</a> &nbsp;&nbsp;&nbsp; 📄 <a href="https://www.dropbox.com/scl/fi/49wgitjikrljl269355nd/RS_DABP_2026.pdf?rlkey=n2xiaepg63e9skfxcyjpjg5ia&st=1umqu1bc&dl=1">Download CV (PDF)</a> 
+🔗 <a href="https://www.linkedin.com/in/danbonfil">LinkedIn</a> &nbsp;&nbsp;&nbsp; 📫 <a href="mailto:danbonfil@gmail.com">Email</a> &nbsp;&nbsp;&nbsp; 📄 <a href="https://www.dropbox.com/scl/fi/49wgitjikrljl269355nd/RS_DABP_2026.pdf?rlkey=n2xiaepg63e9skfxcyjpjg5ia&st=9xph3qre&dl=1">Download CV (PDF)</a> 
 
 </div>
