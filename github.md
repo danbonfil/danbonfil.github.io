@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Git & GitHub
+title: GitHub
 parent: Languages Library
 nav_order: 5
 ---
 
-# Git & GitHub Cheat Sheet
+# Git & GitHub
 
 Git is a distributed version control system.  
 GitHub is a cloud platform for hosting Git repositories and collaboration.
@@ -18,7 +18,7 @@ https://git-scm.com/
 
 ---
 
-# BASIC COMMANDS
+# Git Bash: Basic Commands
 
 ## Initialize & Clone
 ```bash
@@ -46,7 +46,7 @@ git push
 git pull
 ```
 
-# INTERMEDIATE COMMANDS
+# Git Bash: Intermediate Commands
 ## Branching
 ```bash
 git branch
@@ -67,7 +67,7 @@ git reset HEAD file.md
 git revert COMMIT_ID
 ```
 
-# ADVANCED COMMANDS
+# Git Bash: Advanced Commands
 ## Stashing
 ```bash
 git stash
