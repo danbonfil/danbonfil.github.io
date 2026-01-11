@@ -1,6 +1,7 @@
 title: Daniel Bonfil Portfolio
 description: Academic Portfolio & Data Analysis Library
-theme: just-the-docs
+
+remote_theme: just-the-docs/just-the-docs
 
 search_enabled: true
 color_scheme: light
