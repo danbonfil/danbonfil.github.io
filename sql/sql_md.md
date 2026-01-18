@@ -94,7 +94,7 @@ class(con)
 SHOW TABLES;
 ```
 
-<div class="knitsql-table">
+<!-- <div class="knitsql-table"> -->
 
 | name     |
 |:---------|
@@ -106,4 +106,4 @@ SHOW TABLES;
 
 5 records
 
-</div>
+<!-- </div> -->
