@@ -1,20 +1,8 @@
----
-title: "sql_md"
-output: github_document
-date: "2026-01-18"
----
+sql_md
+================
+2026-01-18
 
-```{r setup, include=FALSE}
-rm(list = ls(all = TRUE))
-knitr::opts_chunk$set(
-  warning = FALSE,
-  message = FALSE,
-  results = "asis"
-)
-options(knitr.table.format = "markdown")
-```
-
-```{r}
+``` r
 install.packages(
   setdiff(
     c("DBI", "duckdb", "nycflights13", "tidyverse", "here"),
@@ -23,7 +11,7 @@ install.packages(
 )
 ```
 
-```{r}
+``` r
 library(here)
 library(DBI)
 library(duckdb)
@@ -31,7 +19,7 @@ library(nycflights13)
 library(tidyverse)
 ```
 
-```{r}
+``` r
 # GitHub raw link for the DuckDB database file
 url <- "https://github.com/AU-datascience/data/raw/main/413-613/flights.duckdb"
 
@@ -42,35 +30,29 @@ dest <- here("sql", "flights.duckdb")
 download.file(url, dest, mode = "wb")
 ```
 
-```{r}
+``` r
 con <- dbConnect(duckdb(dbdir = "./flights.duckdb"))
 class(con)
 ```
 
-```{r}
+\[1\] “duckdb_connection” attr(,“package”) \[1\] “duckdb”
+
+``` r
 res <- dbGetQuery(con, "
   SHOW TABLES;
 ")
 knitr::kable(res)
 ```
 
+| name     |
+|:---------|
+| airlines |
+| airports |
+| flights  |
+| planes   |
+| weather  |
+
 <!-- ```{sql, connection=con}
 SHOW TABLES;
 ```
 -->
-
-```{r inject-front-matter, include=FALSE}
-md <- readLines("sql_md.md")
-
-fm <- c(
-  "---",
-  "layout: default",
-  "title: SQL – Applied",
-  "parent: SQL",
-  "nav_order: 1",
-  "---",
-  ""
-)
-
-writeLines(c(fm, md), "sql_md.md")
-```
