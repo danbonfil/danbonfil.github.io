@@ -365,3 +365,14 @@ These are famous "sample databases" you can download to practice complex queries
 2.  **[HackerRank (SQL)](https://www.hackerrank.com/domains/sql):** Offers a wide range of challenges categorized by difficulty from Easy to Advanced.
 3.  **[LeetCode (Database)](https://leetcode.com/problemset/database/):** The best platform for practicing "Interview Style" logic and performance-heavy problems.
 4.  **[SQL Fiddle](https://sqlfiddle.com/):** A useful tool for sharing snippets or testing schema builds without needing to install a local database.
+
+
+---
+
+## Applied SQL Analysis (R Markdown)
+
+This section contains a fully reproducible SQL analysis written in R Markdown and rendered as HTML.
+
+🔗 *[Open SQL Analysis (HTML)](sql/sql.html)*
+
+> The HTML includes data cleaning, queries, tables, and figures.
