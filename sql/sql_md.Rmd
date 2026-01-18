@@ -1,6 +1,6 @@
 ---
 title: "sql"
-output: html_document
+output: github_document
 date: "2026-01-18"
 ---
 
