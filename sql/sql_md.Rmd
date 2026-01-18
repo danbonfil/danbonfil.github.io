@@ -1,11 +1,20 @@
 ---
 title: "sql_md"
 output: github_document
-date: "2026-01-18"
+parent: sql
+nav_order: 1
+---
+
+--- 
+layout: default 
+title: SQL – Applied 
+parent: SQL 
+nav_order: 1 
 ---
 
 ```{r setup, include=FALSE}
 rm(list = ls(all = TRUE))
+#knitr::opts_knit$set(root.dir = here::here())
 knitr::opts_chunk$set(
   warning = FALSE,
   message = FALSE,
@@ -58,19 +67,3 @@ knitr::kable(res)
 SHOW TABLES;
 ```
 -->
-
-```{r inject-front-matter, include=FALSE}
-md <- readLines("sql_md.md")
-
-fm <- c(
-  "---",
-  "layout: default",
-  "title: SQL – Applied",
-  "parent: SQL",
-  "nav_order: 1",
-  "---",
-  ""
-)
-
-writeLines(c(fm, md), "sql_md.md")
-```

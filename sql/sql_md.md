@@ -1,6 +1,9 @@
-sql_md
-================
-2026-01-18
+--- 
+layout: default 
+title: SQL – Applied 
+parent: SQL 
+nav_order: 1 
+---
 
 ``` r
 install.packages(
