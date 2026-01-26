@@ -7,7 +7,7 @@ nav_order: 4
 
 # SQL Syntax
 
-## 8.4.3 SQL Syntax Overview
+## SQL Syntax Overview
 
 Like all programming languages, SQL has a standard syntax and a set of reserved words.
 
@@ -82,7 +82,7 @@ This course focuses primarily on **SELECT** statements.
 
 ---
 
-## 8.4.4 The SELECT Statement
+## The SELECT Statement
 
 The `SELECT` statement is the core SQL tool for retrieving and manipulating data, similar to combining `select()`, `filter()`, `arrange()`, and `summarise()` in `dplyr`.
 
@@ -111,7 +111,7 @@ Common modifiers:
 
 ---
 
-## 8.4.5 SQL Syntax Rules to Remember
+## SQL Syntax Rules to Remember
 
 **Case sensitivity**
 - SQL keywords are case-insensitive.
