@@ -5,11 +5,11 @@ parent: sql
 nav_order: 1
 ---
 
---- 
-layout: default 
-title: SQL – Applied 
-parent: SQL 
-nav_order: 1 
+---
+layout: default
+title: SQL – Applied
+parent: SQL
+nav_order: 1
 ---
 
 ```{r setup, include=FALSE}
@@ -54,6 +54,7 @@ download.file(url, dest, mode = "wb")
 ```{r}
 con <- dbConnect(duckdb(dbdir = "./flights.duckdb"))
 class(con)
+#dbDisconnect(con_p)
 ```
 
 ```{r}
@@ -63,7 +64,121 @@ res <- dbGetQuery(con, "
 knitr::kable(res)
 ```
 
-<!-- ```{sql, connection=con}
+```{r}
+res <- dbGetQuery(con, "
+  DESCRIBE;
+")
+knitr::kable(res)
+```
+
+```{r}
+res <- dbGetQuery(con, "
+  DESCRIBE airlines;
+")
+knitr::kable(res)
+```
+
+```{sql, connection=con}
+#| label: lst-show-tables
 SHOW TABLES;
 ```
--->
+```{sql, connection=con}
+#| label: lst-des-tables
+DESCRIBE airlines;
+```
+
+```{sql}
+#| connection: con
+#| label: lst-select-planes
+SELECT "tailnum", "year", "model" 
+FROM planes;
+```
+
+```{sql}
+#| connection: con
+#| label: lst-select-planes-2
+SELECT * 
+FROM planes
+LIMIT 5;
+```
+
+```{sql}
+#| connection: con
+SELECT DISTINCT "dest" 
+FROM flights;
+```
+
+```{sql}
+#| connection: con
+SELECT "flight", "distance", "origin", "dest" 
+FROM flights
+WHERE "distance" < 50;
+```
+
+```{sql}
+#| connection: con
+SELECT "flight", "month" 
+FROM flights
+WHERE "month" = 12;
+```
+
+```{sql}
+#| connection: con
+SELECT "flight", "origin" 
+FROM flights
+WHERE "origin" = 'JFK';
+```
+
+```{sql}
+#| connection: con
+SELECT "flight", "origin", "dest" 
+FROM flights
+WHERE "origin" = 'JFK' AND "dest" = 'CMH';
+```
+
+```{sql}
+#| connection: con
+SELECT
+    DISTINCT "flight",
+    "origin",
+    "dest"
+FROM
+    flights
+WHERE
+    NOT ("origin" = 'JFK'
+        OR "origin" = 'LGA')
+    AND dest = 'CMH';
+```
+
+```{sql}
+#| connection: con
+SELECT DISTINCT
+    "flight",
+    "origin",
+    "dest"
+FROM flights
+WHERE
+    "origin" NOT IN ('JFK', 'LGA')
+    AND "dest" IN ('BWI', 'IAD', 'DCA');
+```
+
+```{sql}
+#| connection: con
+SELECT "flight", "dep_delay" 
+FROM flights
+WHERE "dep_delay" IS NOT NULL;
+```
+
+```{sql}
+#| connection: con
+SELECT "flight", "dep_delay" 
+FROM flights
+WHERE "dep_delay" IS NULL;
+```
+
+
+
+
+
+
+
