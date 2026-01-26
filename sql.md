@@ -48,28 +48,30 @@ A **function** performs a calculation.
 
 ### Structure of a SQL Statement
 
-SQL Statement (e.g., SELECT)
-│
-├── Clauses (parts of the statement)
-│   ├── FROM (which tables?)
-│   ├── WHERE (filter rows before grouping)
-│   │   └── Predicates (IN, BETWEEN, LIKE, IS NULL, EXISTS)
-│   │       └── Expressions (x > 5, col1 + col2)
-│   ├── GROUP BY (form groups)
-│   ├── HAVING (filter groups after aggregation)
-│   │   └── Aggregate Functions (SUM, AVG, COUNT, MIN, MAX)
-│   ├── SELECT (choose fields/expressions to return)
-│   │   ├── Expressions (CASE, arithmetic, concatenation)
-│   │   │   └── Functions (ROUND, UPPER, NOW, SQRT, etc.)
-│   │   └── Modifiers (DISTINCT, AS alias)
-│   ├── ORDER BY (sort results)
-│   └── LIMIT / OFFSET (restrict result size)
-│
-├── Operators (math: +, -, *, / ; logic: AND, OR, NOT ; comparison: =, <, >)
-│
-└── Keywords (NULL, DEFAULT, PRIMARY KEY, FOREIGN KEY, CHECK, etc.)
+### Structure of a SQL SELECT Statement
 
-
+- **SQL Statement** (e.g., `SELECT`)
+  - **Clauses** (parts of the statement)
+    - **FROM** — which tables?
+    - **WHERE** — filter rows before grouping
+      - **Predicates** — `IN`, `BETWEEN`, `LIKE`, `IS NULL`, `EXISTS`
+        - **Expressions** — `x > 5`, `col1 + col2`
+    - **GROUP BY** — form groups
+    - **HAVING** — filter groups after aggregation
+      - **Aggregate Functions** — `SUM`, `AVG`, `COUNT`, `MIN`, `MAX`
+    - **SELECT** — choose fields or expressions to return
+      - **Expressions** — `CASE`, arithmetic, concatenation
+        - **Functions** — `ROUND`, `UPPER`, `NOW`, `SQRT`, etc.
+      - **Modifiers** — `DISTINCT`, `AS` (alias)
+    - **ORDER BY** — sort results
+    - **LIMIT / OFFSET** — restrict result size
+  - **Operators**
+    - Math: `+`, `-`, `*`, `/`
+    - Logic: `AND`, `OR`, `NOT`
+    - Comparison: `=`, `<`, `>`
+  - **Keywords**
+    - `NULL`, `DEFAULT`, `PRIMARY KEY`, `FOREIGN KEY`, `CHECK`
+    
 ---
 
 ### Where SQL Is Used
