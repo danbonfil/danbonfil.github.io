@@ -21,16 +21,7 @@ In this tutorial, you’ll learn the basics of SQL syntax and how to write queri
 
 ## SQL Syntax Overview
 
-Like all programming languages, SQL has a standard syntax and a set of reserved words.
-
-**Important:**  
-There is an official SQL standard (SQL-92), but in practice many database systems treat it as a starting point rather than a strict rulebook. Most DBMSs implement their own SQL “flavor,” optimized for specific use cases and database designs. As a result, SQL code may not be fully portable across systems.
-
-Using proprietary SQL features can improve performance, but it also creates vendor lock-in and may require rewriting code if the database system changes.
-
-These notes use the SQL flavor implemented by **DuckDB**.
-
-While the Tidyverse uses *functions as verbs* to manipulate data, SQL relies on **statements**, which are composed of clauses, expressions, and other syntactic building blocks.
+SQL relies on **statements**, which are composed of clauses, expressions, and other syntactic building blocks. These notes use the SQL flavor implemented by **DuckDB**.
 
 ---
 

@@ -11,8 +11,7 @@ Python is a general-purpose programming language widely used for data analysis, 
 
 ## Python Syntax Overview
 
-Python is a general-purpose, interpreted programming language widely used for data analysis, machine learning, and software development.  
-Unlike SQL, which is declarative, Python is **imperative and object-oriented**, meaning code is executed step by step and organized around objects and functions.
+Python is **imperative and object-oriented**, meaning code is executed step by step and organized around objects and functions.
 
 In data analytics, Python commonly relies on libraries such as **pandas**, **NumPy**, **scikit-learn**, and **matplotlib**.
 

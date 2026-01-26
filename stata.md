@@ -7,11 +7,10 @@ nav_order: 3
 
 # Stata
 
-Stata is a statistical software widely used in economics, political science, epidemiology, and public policy research.
+Stata is a command-driven statistical software environment designed for data management, statistical analysis, and visualization.
 
 ## Stata Syntax Overview
 
-Stata is a command-driven statistical software environment designed for data management, statistical analysis, and visualization.  
 Unlike general-purpose programming languages, Stata operates on a **single active dataset in memory** and emphasizes reproducible, line-by-line command execution.
 
 Stata syntax is declarative and procedural, with commands that act directly on variables and observations in the current dataset.
