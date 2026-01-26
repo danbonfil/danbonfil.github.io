@@ -5,6 +5,142 @@ parent: Languages Library
 nav_order: 4
 ---
 
+# SQL Syntax
+
+## 8.4.3 SQL Syntax Overview
+
+Like all programming languages, SQL has a standard syntax and a set of reserved words.
+
+**Important:**  
+There is an official SQL standard (SQL-92), but in practice many database systems treat it as a starting point rather than a strict rulebook. Most DBMSs implement their own SQL “flavor,” optimized for specific use cases and database designs. As a result, SQL code may not be fully portable across systems.
+
+Using proprietary SQL features can improve performance, but it also creates vendor lock-in and may require rewriting code if the database system changes.
+
+These notes use the SQL flavor implemented by **DuckDB**.
+
+While the Tidyverse uses *functions as verbs* to manipulate data, SQL relies on **statements**, which are composed of clauses, expressions, and other syntactic building blocks.
+
+---
+
+### SQL Language Building Blocks
+
+| Type | Examples | Role / Purpose |
+|----|----|----|
+| Statements | SELECT, INSERT, UPDATE, DELETE, CREATE, DROP | Complete SQL commands that tell the database what action to perform. |
+| Clauses | FROM, WHERE, GROUP BY, HAVING, ORDER BY, LIMIT, JOIN | Sub-components of statements that define how the action is carried out. |
+| Expressions | CASE, arithmetic (`a + b`), boolean (`x > 5`), concatenation | Return a single value, often used inside clauses. |
+| Functions | Aggregate: `SUM()`, `AVG()`, `COUNT()`<br>Scalar: `ROUND()`, `UPPER()`, `NOW()` | Built-in operations that transform values or sets of values. |
+| Modifiers | DISTINCT, ALL, TOP, AS | Adjust or qualify clause or expression behavior. |
+| Predicates | IN, BETWEEN, LIKE, IS NULL, EXISTS | Conditions that return TRUE/FALSE. |
+| Operators | =, <, >, AND, OR, NOT, +, -, *, / | Compare or combine values. |
+| Keywords | NULL, PRIMARY KEY, FOREIGN KEY, DEFAULT, CHECK | Reserved words defining grammar and constraints. |
+
+A **statement** is a complete executable command.  
+A **clause** is a phrase within a statement.  
+An **expression** is a formula inside a clause.  
+A **function** performs a calculation.  
+**Modifiers** adjust behavior.  
+**Predicates** evaluate conditions.  
+**Operators** perform comparisons or calculations.  
+**Keywords** define SQL’s grammar.
+
+---
+
+### Structure of a SQL Statement
+
+SQL Statement (e.g., SELECT)
+│
+├── Clauses (parts of the statement)
+│   ├── FROM (which tables?)
+│   ├── WHERE (filter rows before grouping)
+│   │   └── Predicates (IN, BETWEEN, LIKE, IS NULL, EXISTS)
+│   │       └── Expressions (x > 5, col1 + col2)
+│   ├── GROUP BY (form groups)
+│   ├── HAVING (filter groups after aggregation)
+│   │   └── Aggregate Functions (SUM, AVG, COUNT, MIN, MAX)
+│   ├── SELECT (choose fields/expressions to return)
+│   │   ├── Expressions (CASE, arithmetic, concatenation)
+│   │   │   └── Functions (ROUND, UPPER, NOW, SQRT, etc.)
+│   │   └── Modifiers (DISTINCT, AS alias)
+│   ├── ORDER BY (sort results)
+│   └── LIMIT / OFFSET (restrict result size)
+│
+├── Operators (math: +, -, *, / ; logic: AND, OR, NOT ; comparison: =, <, >)
+│
+└── Keywords (NULL, DEFAULT, PRIMARY KEY, FOREIGN KEY, CHECK, etc.)
+
+
+---
+
+### Where SQL Is Used
+
+- **Database setup:** CREATE DATABASE, CREATE TABLE  
+- **Data management:** INSERT, UPDATE, DELETE, DROP TABLE, ALTER TABLE  
+- **Data retrieval and analysis:** SELECT  
+
+This course focuses primarily on **SELECT** statements.
+
+---
+
+## 8.4.4 The SELECT Statement
+
+The `SELECT` statement is the core SQL tool for retrieving and manipulating data, similar to combining `select()`, `filter()`, `arrange()`, and `summarise()` in `dplyr`.
+
+Key components:
+
+- **FROM**: identifies the table(s) used.
+- **WHERE**: filters rows (like `filter()`).
+- **ORDER BY**: sorts rows (like `arrange()`).
+- **GROUP BY**: groups data for aggregation (like `group_by()`).
+- **Aggregate functions**: `SUM()`, `AVG()`, `COUNT()`, etc.
+
+Common modifiers:
+
+- **AS**: rename columns or tables.
+- **IN**: test membership.
+- **DISTINCT**: remove duplicates.
+- **LIMIT**: restrict output size.
+
+### SELECT Operators
+
+- Use `=` for comparison (not `==`).
+- Use `!=` for “not equal.”
+- SQL uses `NULL` instead of `NA`.
+- Test missing values with `IS NULL` or `IS NOT NULL`.
+- Logical operators: `AND`, `OR`, `NOT`.
+
+---
+
+## 8.4.5 SQL Syntax Rules to Remember
+
+**Case sensitivity**
+- SQL keywords are case-insensitive.
+- Best practice: keywords in **UPPERCASE**, table and column names in lowercase.
+
+**Order matters**
+- Clauses must follow this order:
+- SELECT → FROM → WHERE → GROUP BY → ORDER BY
+
+
+**Whitespace and formatting**
+- SQL ignores extra spaces and line breaks.
+- Best practice: place each clause on its own line and align keywords.
+
+**Quoting rules**
+- String values: single quotes (`'NYC'`).
+- Identifiers: double quotes (`"first name"`) if they contain spaces or special characters.
+
+**Comments**
+- Single-line: `-- comment`
+- Multi-line: `/* comment */`
+
+**Statement termination**
+- Some databases require semicolons (`;`).
+- Best practice: always include `;`.
+
+Together, these rules make SQL rigid in structure but forgiving in formatting.
+
+
 # SQL: Basic Commands
 
 Welcome to the SQL Pages. This section covers the fundamental commands needed to interact with a database: creating tables, inserting data, and querying information.
