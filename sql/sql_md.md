@@ -44,11 +44,8 @@ class(con)
 #dbDisconnect(con_p)
 ```
 
-``` r
-res <- dbGetQuery(con, "
+``` sql
   SHOW TABLES;
-")
-knitr::kable(res)
 ```
 
 | name     |
@@ -59,11 +56,8 @@ knitr::kable(res)
 | planes   |
 | weather  |
 
-``` r
-res <- dbGetQuery(con, "
+``` sql
   DESCRIBE;
-")
-knitr::kable(res)
 ```
 
 | database | schema | name | column_names | column_types | temporary |
@@ -74,11 +68,8 @@ knitr::kable(res)
 | flights | main | planes | tailnum , year , type , manufacturer, model , engines , seats , speed , engine | VARCHAR, INTEGER, VARCHAR, VARCHAR, VARCHAR, INTEGER, INTEGER, INTEGER, VARCHAR | FALSE |
 | flights | main | weather | origin , year , month , day , hour , temp , dewp , humid , wind_dir , wind_speed, wind_gust , precip , pressure , visib , time_hour | VARCHAR , INTEGER , INTEGER , INTEGER , INTEGER , DOUBLE , DOUBLE , DOUBLE , DOUBLE , DOUBLE , DOUBLE , DOUBLE , DOUBLE , DOUBLE , TIMESTAMP | FALSE |
 
-``` r
-res <- dbGetQuery(con, "
+``` sql
   DESCRIBE airlines;
-")
-knitr::kable(res)
 ```
 
 | column_name | column_type | null | key | default | extra |
@@ -87,44 +78,10 @@ knitr::kable(res)
 | name        | VARCHAR     | YES  | NA  | NA      | NA    |
 
 ``` sql
-SHOW TABLES;
+  SELECT tailnum, year, model
+  FROM planes
+  LIMIT 5;
 ```
-
-<div class="knitsql-table">
-
-| name     |
-|:---------|
-| airlines |
-| airports |
-| flights  |
-| planes   |
-| weather  |
-
-5 records
-
-</div>
-
-``` sql
-DESCRIBE airlines;
-```
-
-<div class="knitsql-table">
-
-| column_name | column_type | null | key | default | extra |
-|:------------|:------------|:-----|:----|:--------|:------|
-| carrier     | VARCHAR     | YES  | NA  | NA      | NA    |
-| name        | VARCHAR     | YES  | NA  | NA      | NA    |
-
-2 records
-
-</div>
-
-``` sql
-SELECT "tailnum", "year", "model" 
-FROM planes;
-```
-
-<div class="knitsql-table">
 
 | tailnum | year | model     |
 |:--------|-----:|:----------|
@@ -133,23 +90,12 @@ FROM planes;
 | N103US  | 1999 | A320-214  |
 | N104UW  | 1999 | A320-214  |
 | N10575  | 2002 | EMB-145LR |
-| N105UW  | 1999 | A320-214  |
-| N107US  | 1999 | A320-214  |
-| N108UW  | 1999 | A320-214  |
-| N109UW  | 1999 | A320-214  |
-| N110UW  | 1999 | A320-214  |
-
-Displaying records 1 - 10
-
-</div>
 
 ``` sql
-SELECT * 
-FROM planes
-LIMIT 5;
+  SELECT *
+  FROM planes
+  LIMIT 5;
 ```
-
-<div class="knitsql-table">
 
 | tailnum | year | type | manufacturer | model | engines | seats | speed | engine |
 |:---|---:|:---|:---|:---|---:|---:|---:|:---|
@@ -159,16 +105,11 @@ LIMIT 5;
 | N104UW | 1999 | Fixed wing multi engine | AIRBUS INDUSTRIE | A320-214 | 2 | 182 | NA | Turbo-fan |
 | N10575 | 2002 | Fixed wing multi engine | EMBRAER | EMB-145LR | 2 | 55 | NA | Turbo-fan |
 
-5 records
-
-</div>
-
 ``` sql
-SELECT DISTINCT "dest" 
-FROM flights;
+  SELECT DISTINCT dest
+  FROM flights
+  LIMIT 5;
 ```
-
-<div class="knitsql-table">
 
 | dest |
 |:-----|
@@ -177,39 +118,23 @@ FROM flights;
 | MSY  |
 | XNA  |
 | BNA  |
-| ALB  |
-| ORF  |
-| ROC  |
-| PVD  |
-| ABQ  |
-
-Displaying records 1 - 10
-
-</div>
 
 ``` sql
-SELECT "flight", "distance", "origin", "dest" 
-FROM flights
-WHERE "distance" < 50;
+  SELECT flight, distance, origin, dest
+  FROM flights
+  WHERE "distance" < 50;
 ```
-
-<div class="knitsql-table">
 
 | flight | distance | origin | dest |
 |-------:|---------:|:-------|:-----|
 |   1632 |       17 | EWR    | LGA  |
 
-1 records
-
-</div>
-
 ``` sql
-SELECT "flight", "month" 
-FROM flights
-WHERE "month" = 12;
+  SELECT flight, month
+  FROM flights
+  WHERE "month" = 12
+  LIMIT 5;
 ```
-
-<div class="knitsql-table">
 
 | flight | month |
 |-------:|------:|
@@ -218,23 +143,13 @@ WHERE "month" = 12;
 |   1895 |    12 |
 |   1487 |    12 |
 |   2243 |    12 |
-|    939 |    12 |
-|   3819 |    12 |
-|   1441 |    12 |
-|   2167 |    12 |
-|    605 |    12 |
-
-Displaying records 1 - 10
-
-</div>
 
 ``` sql
-SELECT "flight", "origin" 
-FROM flights
-WHERE "origin" = 'JFK';
+  SELECT flight, origin
+  FROM flights
+  WHERE "origin" = 'JFK'
+  LIMIT 5;
 ```
-
-<div class="knitsql-table">
 
 | flight | origin |
 |-------:|:-------|
@@ -243,23 +158,13 @@ WHERE "origin" = 'JFK';
 |     79 | JFK    |
 |     49 | JFK    |
 |     71 | JFK    |
-|    194 | JFK    |
-|   1806 | JFK    |
-|   1743 | JFK    |
-|    303 | JFK    |
-|    135 | JFK    |
-
-Displaying records 1 - 10
-
-</div>
 
 ``` sql
-SELECT "flight", "origin", "dest" 
-FROM flights
-WHERE "origin" = 'JFK' AND "dest" = 'CMH';
+  SELECT flight, origin, dest
+  FROM flights
+  WHERE "origin" = 'JFK' AND "dest" = 'CMH'
+  LIMIT 5;
 ```
-
-<div class="knitsql-table">
 
 | flight | origin | dest |
 |-------:|:-------|:-----|
@@ -268,85 +173,55 @@ WHERE "origin" = 'JFK' AND "dest" = 'CMH';
 |   4146 | JFK    | CMH  |
 |   3783 | JFK    | CMH  |
 |   4146 | JFK    | CMH  |
-|   3783 | JFK    | CMH  |
-|   4146 | JFK    | CMH  |
-|   3783 | JFK    | CMH  |
-|   4146 | JFK    | CMH  |
-|   3650 | JFK    | CMH  |
-
-Displaying records 1 - 10
-
-</div>
 
 ``` sql
-SELECT
-    DISTINCT "flight",
-    "origin",
-    "dest"
-FROM
-    flights
-WHERE
-    NOT ("origin" = 'JFK'
-        OR "origin" = 'LGA')
-    AND dest = 'CMH';
+  SELECT
+      DISTINCT flight,
+      origin,
+      dest
+  FROM
+      flights
+  WHERE
+      NOT (origin = 'JFK'
+          OR origin = 'LGA')
+      AND dest = 'CMH'
+  LIMIT 5;
 ```
-
-<div class="knitsql-table">
 
 | flight | origin | dest |
 |-------:|:-------|:-----|
-|   4692 | EWR    | CMH  |
 |   4250 | EWR    | CMH  |
+|   4692 | EWR    | CMH  |
 |   4622 | EWR    | CMH  |
-|   4230 | EWR    | CMH  |
-|   3813 | EWR    | CMH  |
-|   3842 | EWR    | CMH  |
-|   5906 | EWR    | CMH  |
-|   5679 | EWR    | CMH  |
-|   4372 | EWR    | CMH  |
-|   4316 | EWR    | CMH  |
-
-Displaying records 1 - 10
-
-</div>
+|   3852 | EWR    | CMH  |
+|   4240 | EWR    | CMH  |
 
 ``` sql
-SELECT DISTINCT
-    "flight",
-    "origin",
-    "dest"
-FROM flights
-WHERE
-    "origin" NOT IN ('JFK', 'LGA')
-    AND "dest" IN ('BWI', 'IAD', 'DCA');
+  SELECT DISTINCT
+      flight,
+      origin,
+      dest
+  FROM flights
+  WHERE
+      origin NOT IN ('JFK', 'LGA')
+      AND dest IN ('BWI', 'IAD', 'DCA')
+  LIMIT 5;
 ```
-
-<div class="knitsql-table">
 
 | flight | origin | dest |
 |-------:|:-------|:-----|
-|   5821 | EWR    | IAD  |
-|   4561 | EWR    | IAD  |
-|   4709 | EWR    | DCA  |
-|   3815 | EWR    | DCA  |
-|   4091 | EWR    | IAD  |
-|   3835 | EWR    | DCA  |
-|   4636 | EWR    | DCA  |
-|   4625 | EWR    | BWI  |
-|   5899 | EWR    | DCA  |
-|   4100 | EWR    | BWI  |
-
-Displaying records 1 - 10
-
-</div>
+|   5818 | EWR    | DCA  |
+|   4312 | EWR    | DCA  |
+|   4509 | EWR    | BWI  |
+|   1037 | EWR    | IAD  |
+|   3827 | EWR    | IAD  |
 
 ``` sql
-SELECT "flight", "dep_delay" 
-FROM flights
-WHERE "dep_delay" IS NOT NULL;
+  SELECT flight, dep_delay
+  FROM flights
+  WHERE dep_delay IS NOT NULL
+  LIMIT 5;
 ```
-
-<div class="knitsql-table">
 
 | flight | dep_delay |
 |-------:|----------:|
@@ -355,23 +230,13 @@ WHERE "dep_delay" IS NOT NULL;
 |   1141 |         2 |
 |    725 |        -1 |
 |    461 |        -6 |
-|   1696 |        -4 |
-|    507 |        -5 |
-|   5708 |        -3 |
-|     79 |        -3 |
-|    301 |        -2 |
-
-Displaying records 1 - 10
-
-</div>
 
 ``` sql
-SELECT "flight", "dep_delay" 
-FROM flights
-WHERE "dep_delay" IS NULL;
+  SELECT flight, dep_delay
+  FROM flights
+  WHERE dep_delay IS NULL
+  LIMIT 5;
 ```
-
-<div class="knitsql-table">
 
 | flight | dep_delay |
 |-------:|----------:|
@@ -380,12 +245,3 @@ WHERE "dep_delay" IS NULL;
 |   1925 |        NA |
 |    125 |        NA |
 |   4352 |        NA |
-|   4406 |        NA |
-|   4434 |        NA |
-|   4935 |        NA |
-|   3849 |        NA |
-|    133 |        NA |
-
-Displaying records 1 - 10
-
-</div>

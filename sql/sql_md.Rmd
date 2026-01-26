@@ -57,128 +57,257 @@ class(con)
 #dbDisconnect(con_p)
 ```
 
-```{r}
+```{sql, connection=con, eval=FALSE}
+#| label: lst-show-tables
+  SHOW TABLES;
+```
+
+```{r, echo=FALSE}
 res <- dbGetQuery(con, "
   SHOW TABLES;
 ")
 knitr::kable(res)
 ```
 
-```{r}
+```{sql, connection=con, eval=FALSE}
+#| label: lst-des-tables
+  DESCRIBE;
+```
+
+```{r, echo=FALSE}
 res <- dbGetQuery(con, "
   DESCRIBE;
 ")
 knitr::kable(res)
 ```
 
-```{r}
+```{sql, connection=con, eval=FALSE}
+#| connection: con
+  DESCRIBE airlines;
+```
+
+```{r, echo=FALSE}
 res <- dbGetQuery(con, "
   DESCRIBE airlines;
 ")
 knitr::kable(res)
 ```
 
-```{sql, connection=con}
-#| label: lst-show-tables
-SHOW TABLES;
-```
-```{sql, connection=con}
-#| label: lst-des-tables
-DESCRIBE airlines;
-```
-
-```{sql}
+```{sql, connection=con, eval=FALSE}
 #| connection: con
 #| label: lst-select-planes
-SELECT "tailnum", "year", "model" 
-FROM planes;
+  SELECT tailnum, year, model
+  FROM planes
+  LIMIT 5;
 ```
 
-```{sql}
+```{r, echo=FALSE}
+res <- dbGetQuery(con, "
+  SELECT tailnum, year, model
+  FROM planes
+  LIMIT 5;
+")
+knitr::kable(res)
+```
+
+```{sql, connection=con, eval=FALSE}
 #| connection: con
 #| label: lst-select-planes-2
-SELECT * 
-FROM planes
-LIMIT 5;
+  SELECT *
+  FROM planes
+  LIMIT 5;
 ```
 
-```{sql}
+```{r, echo=FALSE}
+res <- dbGetQuery(con, "
+  SELECT *
+  FROM planes
+  LIMIT 5;
+")
+knitr::kable(res)
+```
+
+```{sql, connection=con, eval=FALSE}
 #| connection: con
-SELECT DISTINCT "dest" 
-FROM flights;
+  SELECT DISTINCT dest
+  FROM flights
+  LIMIT 5;
 ```
 
-```{sql}
+```{r, echo=FALSE}
+res <- dbGetQuery(con, "
+  SELECT DISTINCT dest
+  FROM flights
+  LIMIT 5;
+")
+knitr::kable(res)
+```
+
+```{sql, connection=con, eval=FALSE}
 #| connection: con
-SELECT "flight", "distance", "origin", "dest" 
-FROM flights
-WHERE "distance" < 50;
+  SELECT flight, distance, origin, dest
+  FROM flights
+  WHERE "distance" < 50;
 ```
 
-```{sql}
+```{r, echo=FALSE}
+res <- dbGetQuery(con, "
+  SELECT flight, distance, origin, dest
+  FROM flights
+  WHERE distance < 50;
+")
+knitr::kable(res)
+```
+
+```{sql, connection=con, eval=FALSE}
 #| connection: con
-SELECT "flight", "month" 
-FROM flights
-WHERE "month" = 12;
+  SELECT flight, month
+  FROM flights
+  WHERE "month" = 12
+  LIMIT 5;
 ```
 
-```{sql}
+```{r, echo=FALSE}
+res <- dbGetQuery(con, "
+  SELECT flight, month
+  FROM flights
+  WHERE month = 12
+  LIMIT 5;
+")
+knitr::kable(res)
+```
+
+```{sql, connection=con, eval=FALSE}
 #| connection: con
-SELECT "flight", "origin" 
-FROM flights
-WHERE "origin" = 'JFK';
+  SELECT flight, origin
+  FROM flights
+  WHERE "origin" = 'JFK'
+  LIMIT 5;
 ```
 
-```{sql}
+```{r, echo=FALSE}
+res <- dbGetQuery(con, "
+  SELECT flight, origin
+  FROM flights
+  WHERE origin = 'JFK'
+  LIMIT 5;
+")
+knitr::kable(res)
+```
+
+```{sql, connection=con, eval=FALSE}
 #| connection: con
-SELECT "flight", "origin", "dest" 
-FROM flights
-WHERE "origin" = 'JFK' AND "dest" = 'CMH';
+  SELECT flight, origin, dest
+  FROM flights
+  WHERE "origin" = 'JFK' AND "dest" = 'CMH'
+  LIMIT 5;
 ```
 
-```{sql}
+```{r, echo=FALSE}
+res <- dbGetQuery(con, "
+  SELECT flight, origin, dest
+  FROM flights
+  WHERE origin = 'JFK' AND dest = 'CMH'
+  LIMIT 5;
+")
+knitr::kable(res)
+```
+
+```{sql, connection=con, eval=FALSE}
 #| connection: con
-SELECT
-    DISTINCT "flight",
-    "origin",
-    "dest"
-FROM
-    flights
-WHERE
-    NOT ("origin" = 'JFK'
-        OR "origin" = 'LGA')
-    AND dest = 'CMH';
+  SELECT
+      DISTINCT flight,
+      origin,
+      dest
+  FROM
+      flights
+  WHERE
+      NOT (origin = 'JFK'
+          OR origin = 'LGA')
+      AND dest = 'CMH'
+  LIMIT 5;
 ```
 
-```{sql}
+```{r, echo=FALSE}
+res <- dbGetQuery(con, "
+  SELECT
+      DISTINCT flight,
+      origin,
+      dest
+  FROM
+      flights
+  WHERE
+      NOT (origin = 'JFK'
+          OR origin = 'LGA')
+      AND dest = 'CMH'
+  LIMIT 5;
+")
+knitr::kable(res)
+```
+
+```{sql, connection=con, eval=FALSE}
 #| connection: con
-SELECT DISTINCT
-    "flight",
-    "origin",
-    "dest"
-FROM flights
-WHERE
-    "origin" NOT IN ('JFK', 'LGA')
-    AND "dest" IN ('BWI', 'IAD', 'DCA');
+  SELECT DISTINCT
+      flight,
+      origin,
+      dest
+  FROM flights
+  WHERE
+      origin NOT IN ('JFK', 'LGA')
+      AND dest IN ('BWI', 'IAD', 'DCA')
+  LIMIT 5;
 ```
 
-```{sql}
+```{r, echo=FALSE}
+res <- dbGetQuery(con, "
+  SELECT DISTINCT
+      flight,
+      origin,
+      dest
+  FROM flights
+  WHERE
+      origin NOT IN ('JFK', 'LGA')
+      AND dest IN ('BWI', 'IAD', 'DCA')
+  LIMIT 5;
+")
+knitr::kable(res)
+```
+
+```{sql, connection=con, eval=FALSE}
 #| connection: con
-SELECT "flight", "dep_delay" 
-FROM flights
-WHERE "dep_delay" IS NOT NULL;
+  SELECT flight, dep_delay
+  FROM flights
+  WHERE dep_delay IS NOT NULL
+  LIMIT 5;
 ```
 
-```{sql}
+```{r, echo=FALSE}
+res <- dbGetQuery(con, "
+  SELECT flight, dep_delay
+  FROM flights
+  WHERE dep_delay IS NOT NULL
+  LIMIT 5;
+")
+knitr::kable(res)
+```
+
+```{sql, connection=con, eval=FALSE}
 #| connection: con
-SELECT "flight", "dep_delay" 
-FROM flights
-WHERE "dep_delay" IS NULL;
+  SELECT flight, dep_delay
+  FROM flights
+  WHERE dep_delay IS NULL
+  LIMIT 5;
 ```
 
-
-
-
+```{r, echo=FALSE}
+res <- dbGetQuery(con, "
+  SELECT flight, dep_delay
+  FROM flights
+  WHERE dep_delay IS NULL
+  LIMIT 5;
+")
+knitr::kable(res)
+```
 
 
 
