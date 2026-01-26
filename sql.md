@@ -5,7 +5,19 @@ parent: Languages Library
 nav_order: 4
 ---
 
-# SQL Syntax
+# Introduction to SQL
+
+SQL (Structured Query Language) is the standard language used to store, retrieve, and manage data in relational databases. It allows you to work with large amounts of data efficiently using simple, readable commands.
+
+With SQL, you can:
+- Create and modify databases and tables
+- Insert, update, and delete data
+- Query data to find specific information
+- Control access and maintain data integrity
+
+SQL is widely used in systems such as MySQL, PostgreSQL, SQL Server, and Oracle, making it an essential skill for data analysts, software developers, and data engineers.
+
+In this tutorial, you’ll learn the basics of SQL syntax and how to write queries to interact with a database step by step.
 
 ## SQL Syntax Overview
 
@@ -145,7 +157,7 @@ Together, these rules make SQL rigid in structure but forgiving in formatting.
 
 # SQL: Basic Commands
 
-Welcome to the SQL Pages. This section covers the fundamental commands needed to interact with a database: creating tables, inserting data, and querying information.
+This section covers the fundamental commands needed to interact with a database: creating tables, inserting data, and querying information.
 
 * **DQL (Data Query Language):** Getting data out (`SELECT`).
 * **DML (Data Manipulation Language):** Putting data in and changing it (`INSERT`, `UPDATE`, `DELETE`).

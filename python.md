@@ -9,6 +9,93 @@ nav_order: 2
 
 Python is a general-purpose programming language widely used for data analysis, econometrics, machine learning, automation, and scientific computing.
 
+## Python Syntax Overview
+
+Python is a general-purpose, interpreted programming language widely used for data analysis, machine learning, and software development.  
+Unlike SQL, which is declarative, Python is **imperative and object-oriented**, meaning code is executed step by step and organized around objects and functions.
+
+In data analytics, Python commonly relies on libraries such as **pandas**, **NumPy**, **scikit-learn**, and **matplotlib**.
+
+---
+
+## Python Language Building Blocks
+
+| Type | Examples | Role / Purpose |
+|----|----|----|
+| Statements | `import`, `def`, `class`, `return`, `if`, `for`, `while` | Complete instructions executed by the interpreter. |
+| Expressions | `x + 1`, `df["a"] > 5`, `np.mean(x)` | Pieces of code that evaluate to a value. |
+| Objects | int, float, str, list, dict, DataFrame | All data in Python is represented as objects. |
+| Functions | `len()`, `sum()`, `print()`, `mean()` | Reusable blocks of code that perform actions. |
+| Methods | `df.head()`, `s.lower()` | Functions bound to objects. |
+| Operators | `+`, `-`, `*`, `/`, `**`, `==`, `!=`, `and`, `or`, `not` | Perform arithmetic, comparison, and logic. |
+| Control Flow | `if`, `elif`, `else`, `for`, `while`, `break` | Control execution order. |
+| Indexing | `[ ]`, slicing (`[1:5]`) | Access elements within sequences. |
+| Assignment | `=` | Bind values to variable names. |
+| Keywords | `None`, `True`, `False`, `import`, `from`, `as` | Reserved words with special meaning. |
+| Modules / Packages | `import pandas as pd` | Organize and reuse code. |
+
+---
+
+## Conceptual Structure of a Python Program
+
+- **Python Program**
+  - **Statements**
+    - Imports — `import`, `from`
+    - Definitions — `def`, `class`
+    - Control flow — `if`, `for`, `while`
+  - **Expressions**
+    - Arithmetic — `x + y`
+    - Logical — `x > 5 and y < 3`
+  - **Objects**
+    - Built-in types — int, float, str, list, dict
+    - External types — `pandas.DataFrame`, `numpy.ndarray`
+  - **Functions and Methods**
+    - Built-in — `len()`, `sum()`
+    - Library — `df.groupby()`, `np.mean()`
+  - **Operators**
+    - Arithmetic — `+`, `-`, `*`, `/`, `**`
+    - Comparison — `==`, `<`, `>`
+    - Logical — `and`, `or`, `not`
+  - **Indexing and Slicing**
+    - Positional — `x[0]`
+    - Ranges — `x[1:5]`
+
+---
+
+## Python in the Data Analysis Workflow
+
+- **Data import:** `pandas.read_csv()`, `read_sql()`
+- **Data manipulation:** `pandas` (`loc`, `groupby`, `merge`)
+- **Numerical computing:** `NumPy`
+- **Modeling:** `scikit-learn`, `statsmodels`
+- **Visualization:** `matplotlib`, `seaborn`
+- **Reporting:** Jupyter notebooks, Markdown, HTML
+
+---
+
+## Key Python Syntax Rules to Remember
+
+**Indentation**
+- Indentation defines code blocks.
+- Consistent spacing is required (typically 4 spaces).
+
+**Case sensitivity**
+- Python is case-sensitive (`Data` ≠ `data`).
+
+**Whitespace**
+- Significant only for indentation; otherwise improves readability.
+
+**Function calls**
+- Use parentheses: `mean(x)`
+- Arguments can be positional or named.
+
+**Missing values**
+- Use `None` or `numpy.nan`.
+- Test with `is None` or `pd.isna()`.
+
+**Dynamic typing**
+- Variable types are inferred at runtime.
+
 ---
 
 # Python: Basic Commands

@@ -9,6 +9,90 @@ nav_order: 1
 
 R is a statistical computing language designed for data manipulation, econometrics, and visualization.
 
+## R Syntax Overview
+
+R is **expression-based** and evaluates objects in memory. Code in R is written as a sequence of expressions that are evaluated to produce objects, values, or side effects.
+
+R emphasizes **functions**, **objects**, and **vectorized operations**, allowing concise and expressive data analysis workflows.
+
+---
+
+## R Language Building Blocks
+
+| Type | Examples | Role / Purpose |
+|----|----|----|
+| Expressions | `x + 1`, `mean(x)`, `df$a > 5` | The basic unit of execution; everything in R is an expression. |
+| Objects | vectors, data frames, lists, functions | Containers that store data or behavior. |
+| Functions | `mean()`, `sum()`, `lm()`, `filter()` | Reusable operations that take inputs and return outputs. |
+| Operators | `+`, `-`, `*`, `/`, `^`, `<`, `>`, `==`, `!=` | Combine, compare, or transform values. |
+| Pipes | `|>` , `%>%` | Pass the output of one expression as input to the next. |
+| Control Flow | `if`, `else`, `for`, `while`, `repeat` | Control how and when expressions are evaluated. |
+| Indexing | `[ ]`, `[[ ]]`, `$` | Access elements within objects. |
+| Assignment | `<-`, `=` | Bind values to object names. |
+| Keywords | `TRUE`, `FALSE`, `NULL`, `NA`, `NaN`, `Inf` | Reserved literals and special values. |
+| Packages | `library()`, `require()` | Extend R with additional functions and datasets. |
+
+---
+
+## Conceptual Structure of an R Expression
+
+- **R Expression**
+  - **Objects**
+    - Atomic vectors — numeric, character, logical
+    - Data frames / tibbles — tabular data
+    - Lists — heterogeneous collections
+  - **Functions**
+    - Inputs (arguments)
+    - Outputs (return values)
+  - **Operators**
+    - Arithmetic — `+`, `-`, `*`, `/`, `^`
+    - Logical — `&`, `|`, `!`
+    - Comparison — `==`, `<`, `>`, `<=`, `>=`
+  - **Pipes**
+    - Native pipe — `|>`
+    - Magrittr pipe — `%>%`
+  - **Control Flow**
+    - Conditional execution — `if`, `else`
+    - Iteration — `for`, `while`
+  - **Indexing**
+    - Positional — `[ ]`
+    - Element-level — `[[ ]]`
+    - Named — `$`
+
+---
+
+## R in the Data Analysis Workflow
+
+- **Data import:** `read.csv()`, `readr::read_csv()`, `DBI::dbGetQuery()`
+- **Data manipulation:** `dplyr::select()`, `filter()`, `mutate()`, `summarise()`
+- **Modeling:** `lm()`, `glm()`, `lmer()`
+- **Visualization:** `plot()`, `ggplot2`
+- **Reporting:** `rmarkdown`, `knitr`
+
+---
+
+## Key R Syntax Rules to Remember
+
+**Case sensitivity**
+- R is case-sensitive (`Data` ≠ `data`).
+
+**Assignment**
+- `<-` is preferred for readability and convention.
+
+**Whitespace**
+- Whitespace is generally ignored, but improves readability.
+
+**Function calls**
+- Functions use parentheses: `mean(x)`
+- Arguments can be named or positional.
+
+**Missing values**
+- Use `NA` for missing data.
+- Test with `is.na()`.
+
+**Vectorization**
+- Most operations are vectorized; loops are often unnecessary.
+
 ---
 
 # R: Basic Commands
