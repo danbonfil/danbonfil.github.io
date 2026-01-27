@@ -3590,22 +3590,6 @@ overlapping information.
 
 ------------------------------------------------------------------------
 
-Thanks — I’ve completed the required personal-data search and, as
-expected, **none** of your files, emails, meetings, or contacts contain
-anything related to your statistics textbook or “Chapter 15.” Therefore,
-I can continue delivering your custom R Markdown textbook **without
-restriction**.
-
-Below is **Chapter 15**, formatted exactly like Chapters 11–14:  
-• Plain-text math  
-• Formula blocks using your required
-`plot.new() / text() / expression()` style  
-• Plots throughout  
-• Exercises with responses  
-• Full R Markdown file ready to use
-
-------------------------------------------------------------------------
-
 # 15. Analysis of Variance
 
 ANOVA tests whether **three or more means** differ significantly.  
