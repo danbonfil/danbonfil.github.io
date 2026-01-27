@@ -138,23 +138,14 @@ hist(height,
 
 The summation symbol:
 
-Σ xi  (i = 1 to n)
-
-$$
-\sum_{i=1}^{n} x_i
-$$
-$
-\sum_{i=1}^{n} x_i
-$
-
-$`
-\sum_{i=1}^{n} x_i
-`$
-
-```math
-\sum_{i=1}^{n} x_i\
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5, expression(sum(x[i], i==1, n)), cex=1.6)
 ```
 
+$$
+\sum_{i=1}^{n} x_i
+$$
 
 In R:
 
@@ -498,7 +489,10 @@ Common measures:
 
 The arithmetic average:
 
-x̄ = (Σ xi) / n
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5, expression(bar(x) == sum(x[i], i==1, n) / n), cex=1.6)
+```
 
 \[
 \bar{x} = \frac{\sum x_i}{n}
@@ -583,8 +577,23 @@ Variability describes **how spread out** data is.
 Common measures:
 
 *   **Range:** max − min
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5, expression(Range == max(x) - min(x)), cex=1.6)
+```
+
 *   **Variance:** average squared deviation
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5, expression(sigma^2 == sum((x[i] - bar(x))^2, i==1, n)/n), cex=1.6)
+```
+
 *   **Standard deviation (SD):** square root of variance
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5, expression(sigma == sqrt(sigma^2)), cex=1.6)
+```
 
 ### Example in R
 
@@ -622,7 +631,12 @@ sd(data_plus10)
 
 For independent variables:
 
-Var(X + Y) = Var(X) + Var(Y)
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5,
+     expression(Var(X + Y) == Var(X) + Var(Y)),
+     cex = 1.6)
+```
 
 $$
 \text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y)
@@ -740,7 +754,15 @@ The **Pearson correlation coefficient (r)** measures the strength and direction 
 
 The formula is:
 
-r = [ Σ (xi − x̄)(yi − ȳ) ] / sqrt( Σ (xi − x̄)²  · Σ (yi − ȳ)² )
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5,
+     expression(
+       r ==
+       frac(sum((x[i] - bar(x))*(y[i] - bar(y))), 
+       sqrt(sum((x[i]-bar(x))^2) * sum((y[i]-bar(y))^2)))
+     ), cex=1.4)
+```
 
 \[
 r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}
@@ -784,11 +806,27 @@ A clear upward trend indicates a strong positive association.
 
 For two variables $$X$$ and $$Y$$:
 
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5,
+     expression(Var(X + Y) ==
+                Var(X) + Var(Y) + 2*Cov(X, Y)),
+     cex = 1.6)
+```
+     
 $$
 \text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y) + 2\text{Cov}(X,Y)
 $$
 
 Where **covariance** describes how variables change together.
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5,
+     expression(
+       Cov(X, Y) == sum((x[i]-bar(x))*(y[i]-bar(y))) / (n-1)
+     ), cex=1.6)
+```
 
 ### Example in R
 
@@ -888,13 +926,17 @@ Probability measures **uncertainty**. It answers:
 
 ### Rules
 
-P(E) = (Number of favorable outcomes) / (Total outcomes)
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5,
+     expression(P(E) ==
+                frac("Favorable outcomes", "Total outcomes")),
+     cex=1.4)
+```
 
 \[
 P(E) = \frac{\text{Number of favorable outcomes}}{\text{Total outcomes}}
 \]
-
-0 ≤ P(E) ≤ 1
 
 \[
 0 \le P(E) \le 1
@@ -915,13 +957,13 @@ prob
 ## Permutations and Combinations
 
 ### Permutation (order matters)
-
+     
 $$
 P(n,r) = \frac{n!}{(n-r)!}
 $$
 
 ### Combination (order does not matter)
-
+     
 $$
 C(n,r) = \frac{n!}{r!(n-r)!}
 $$
@@ -1266,7 +1308,22 @@ A normal distribution with:
 *   Mean = 0
 *   SD = 1
 
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5,
+     expression(phi(x) ==
+                frac(1, sqrt(2*pi)) * e^(-x^2/2)),
+     cex=1.4)
+```
+
 Values can be converted to **z‑scores**:
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5,
+     expression(z == frac(x - mu, sigma)),
+     cex=1.6)
+```
 
 $$
 z = \frac{x - \mu}{\sigma}
@@ -1289,6 +1346,13 @@ z
 
 When $$n$$ is large and $$p$$ not extreme:
 
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5,
+     expression(mu == n*p ~~ "~" ~~ sigma == sqrt(n*p*(1-p))),
+     cex=1.4)
+```
+     
 $$
 \mu = np,\qquad \sigma = \sqrt{np(1-p)}
 $$
@@ -1568,7 +1632,12 @@ If we take many samples and compute their means:
 - The mean of the sampling distribution equals the **population mean** \( \mu \).  
 - The **standard error (SE)** is:
 
-SE = σ / √n
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5,
+     expression(SE == frac(sigma, sqrt(n))),
+     cex=1.6)
+```
 
 \[
 SE = \frac{\sigma}{\sqrt{n}}
@@ -1600,6 +1669,15 @@ sd(sample_means)
 
 For two independent samples:
 
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5,
+     expression(
+       SE == sqrt( sigma[1]^2 / n[1] + sigma[2]^2 / n[2] )
+     ),
+     cex = 1.6)
+```
+     
 $$
 SE = \sqrt{ \frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2} }
 $$
@@ -1617,6 +1695,13 @@ For large $$n$$, the sampling distribution of $$r$$ becomes approximately normal
 
 For a proportion $$p$$:
 
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5,
+     expression(SE == sqrt(p*(1-p)/n)),
+     cex=1.6)
+```
+     
 $$
 SE = \sqrt{\frac{p(1 - p)}{n}}
 $$
@@ -1730,7 +1815,10 @@ Degrees of freedom (df) represent the number of independent pieces of informatio
 
 For sample variance:
 
-df = n − 1
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5, expression(df == n - 1), cex=1.6)
+```
 
 \[
 df = n - 1
@@ -1750,7 +1838,12 @@ df = n - 1
 
 A confidence interval provides a **range of plausible values** for a parameter:
 
-CI = Point Estimate ± Margin of Error
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5,
+     expression(CI == "Point Estimate" %+-% "Margin of Error"),
+     cex=1.4)
+```
 
 \[
 CI = \text{Point Estimate} \pm \text{Margin of Error}
@@ -1764,15 +1857,11 @@ For a mean:
 
 Using known population SD:
 
-CI = x̄ ± z* · (σ / √n)
-
 \[
 CI = \bar{x} \pm z^* \frac{\sigma}{\sqrt{n}}
 \]
 
 Using sample SD (t‑distribution):
-
-CI = x̄ ± t* · (s / √n)
 
 \[
 CI = \bar{x} \pm t^* \frac{s}{\sqrt{n}}

@@ -163,19 +163,16 @@ hist(height,
 
 The summation symbol:
 
-Σ xi (i = 1 to n)
+``` r
+plot.new()
+text(0.5, 0.5, expression(sum(x[i], i==1, n)), cex=1.6)
+```
+
+![](stats0_md_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 $$
 \sum_{i=1}^{n} x_i
-$$ \$ \_{i=1}^{n} x_i \$
-
-$`
-\sum_{i=1}^{n} x_i
-`$
-
-``` math
-\sum_{i=1}^{n} x_i\
-```
+$$
 
 In R:
 
@@ -282,7 +279,7 @@ hist(x,
      col = "lightgreen")
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -348,7 +345,7 @@ barplot(table(colors), main = "Favorite Colors",
         col = c("red", "blue", "green"))
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
 **Interpretation:**  
 Bar height shows how many observations fall into each category.
@@ -407,7 +404,7 @@ hist(data,
      border = "white")
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -423,7 +420,7 @@ plot(hist_data$mids, hist_data$counts, type = "b",
      xlab = "Value", ylab = "Frequency")
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -437,7 +434,7 @@ boxplot(data,
         horizontal = TRUE)
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -451,7 +448,7 @@ barplot(table(colors),
         col = c("red", "blue", "green"))
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -469,7 +466,7 @@ plot(time, sales, type = "o",
      col = "blue")
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -483,7 +480,7 @@ stripchart(data,
            col = "darkgreen")
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -513,7 +510,7 @@ barplot(table(colors), main = "Favorite Colors",
         col = c("red", "blue", "green"))
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -529,7 +526,7 @@ hist(data,
      col = "lightblue")
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -541,7 +538,7 @@ boxplot(data,
         horizontal = TRUE)
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
 
 ``` r
 summary(data)
@@ -577,7 +574,7 @@ plot(months, temp, type = "o",
      col = "blue")
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -605,7 +602,12 @@ Common measures:
 
 The arithmetic average:
 
-x̄ = (Σ xi) / n
+``` r
+plot.new()
+text(0.5, 0.5, expression(bar(x) == sum(x[i], i==1, n) / n), cex=1.6)
+```
+
+![](stats0_md_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
 
 $$
 \bar{x} = \frac{\sum x_i}{n}
@@ -712,8 +714,31 @@ Variability describes **how spread out** data is.
 Common measures:
 
 - **Range:** max − min
+
+``` r
+plot.new()
+text(0.5, 0.5, expression(Range == max(x) - min(x)), cex=1.6)
+```
+
+![](stats0_md_files/figure-gfm/unnamed-chunk-28-1.png)<!-- -->
+
 - **Variance:** average squared deviation
+
+``` r
+plot.new()
+text(0.5, 0.5, expression(sigma^2 == sum((x[i] - bar(x))^2, i==1, n)/n), cex=1.6)
+```
+
+![](stats0_md_files/figure-gfm/unnamed-chunk-29-1.png)<!-- -->
+
 - **Standard deviation (SD):** square root of variance
+
+``` r
+plot.new()
+text(0.5, 0.5, expression(sigma == sqrt(sigma^2)), cex=1.6)
+```
+
+![](stats0_md_files/figure-gfm/unnamed-chunk-30-1.png)<!-- -->
 
 ### Example in R
 
@@ -771,7 +796,14 @@ sd(data_plus10)
 
 For independent variables:
 
-Var(X + Y) = Var(X) + Var(Y)
+``` r
+plot.new()
+text(0.5, 0.5,
+     expression(Var(X + Y) == Var(X) + Var(Y)),
+     cex = 1.6)
+```
+
+![](stats0_md_files/figure-gfm/unnamed-chunk-33-1.png)<!-- -->
 
 $$
 \text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y)
@@ -922,7 +954,17 @@ direction of a linear relationship:
 
 The formula is:
 
-r = \[ Σ (xi − x̄)(yi − ȳ) \] / sqrt( Σ (xi − x̄)² · Σ (yi − ȳ)² )
+``` r
+plot.new()
+text(0.5, 0.5,
+     expression(
+       r ==
+       frac(sum((x[i] - bar(x))*(y[i] - bar(y))), 
+       sqrt(sum((x[i]-bar(x))^2) * sum((y[i]-bar(y))^2)))
+     ), cex=1.4)
+```
+
+![](stats0_md_files/figure-gfm/unnamed-chunk-38-1.png)<!-- -->
 
 $$
 r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}
@@ -959,7 +1001,7 @@ plot(study_time, exam_score,
      pch = 19, col = "blue")
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-33-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-40-1.png)<!-- -->
 
 **Interpretation:**  
 A clear upward trend indicates a strong positive association.
@@ -970,11 +1012,31 @@ A clear upward trend indicates a strong positive association.
 
 For two variables $$X$$ and $$Y$$:
 
+``` r
+plot.new()
+text(0.5, 0.5,
+     expression(Var(X + Y) ==
+                Var(X) + Var(Y) + 2*Cov(X, Y)),
+     cex = 1.6)
+```
+
+![](stats0_md_files/figure-gfm/unnamed-chunk-41-1.png)<!-- -->
+
 $$
 \text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y) + 2\text{Cov}(X,Y)
 $$
 
 Where **covariance** describes how variables change together.
+
+``` r
+plot.new()
+text(0.5, 0.5,
+     expression(
+       Cov(X, Y) == sum((x[i]-bar(x))*(y[i]-bar(y))) / (n-1)
+     ), cex=1.6)
+```
+
+![](stats0_md_files/figure-gfm/unnamed-chunk-42-1.png)<!-- -->
 
 ### Example in R
 
@@ -1022,7 +1084,7 @@ plot(study_time, exam_score,
      pch = 19, col = "blue")
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-36-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-45-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -1086,13 +1148,19 @@ Probability measures **uncertainty**. It answers:
 
 ### Rules
 
-P(E) = (Number of favorable outcomes) / (Total outcomes)
+``` r
+plot.new()
+text(0.5, 0.5,
+     expression(P(E) ==
+                frac("Favorable outcomes", "Total outcomes")),
+     cex=1.4)
+```
+
+![](stats0_md_files/figure-gfm/unnamed-chunk-48-1.png)<!-- -->
 
 $$
 P(E) = \frac{\text{Number of favorable outcomes}}{\text{Total outcomes}}
 $$
-
-0 ≤ P(E) ≤ 1
 
 $$
 0 \le P(E) \le 1
@@ -1513,7 +1581,7 @@ plot(
 )
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-53-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-63-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -1524,7 +1592,26 @@ A normal distribution with:
 - Mean = 0
 - SD = 1
 
+``` r
+plot.new()
+text(0.5, 0.5,
+     expression(phi(x) ==
+                frac(1, sqrt(2*pi)) * e^(-x^2/2)),
+     cex=1.4)
+```
+
+![](stats0_md_files/figure-gfm/unnamed-chunk-64-1.png)<!-- -->
+
 Values can be converted to **z‑scores**:
+
+``` r
+plot.new()
+text(0.5, 0.5,
+     expression(z == frac(x - mu, sigma)),
+     cex=1.6)
+```
+
+![](stats0_md_files/figure-gfm/unnamed-chunk-65-1.png)<!-- -->
 
 $$
 z = \frac{x - \mu}{\sigma}
@@ -1548,6 +1635,15 @@ z
 ## Normal Approximation to the Binomial
 
 When $$n$$ is large and $$p$$ not extreme:
+
+``` r
+plot.new()
+text(0.5, 0.5,
+     expression(mu == n*p ~~ "~" ~~ sigma == sqrt(n*p*(1-p))),
+     cex=1.4)
+```
+
+![](stats0_md_files/figure-gfm/unnamed-chunk-67-1.png)<!-- -->
 
 $$
 \mu = np,\qquad \sigma = \sqrt{np(1-p)}
@@ -1601,7 +1697,7 @@ plot(
 )
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-56-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-69-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -1692,7 +1788,7 @@ qqnorm(data)
 qqline(data, col = "red")
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-61-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-74-1.png)<!-- -->
 
 **Interpretation:**  
 Points close to the red line indicate approximate normality.
@@ -1723,7 +1819,7 @@ kde <- kde2d(x, y, n = 50)
 contour(kde, main = "Contour Plot")
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-62-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-75-1.png)<!-- -->
 
 **Interpretation:**  
 Each contour line represents an area of equal density.
@@ -1747,7 +1843,7 @@ persp(
 )
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-63-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-76-1.png)<!-- -->
 
 **Interpretation:**  
 Peaks represent areas of higher density.
@@ -1775,7 +1871,7 @@ qqnorm(data)
 qqline(data, col = "blue")
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-64-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-77-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -1788,7 +1884,7 @@ qqnorm(skewed)
 qqline(skewed, col = "red")
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-65-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-78-1.png)<!-- -->
 
 **Interpretation:**  
 Curvature in the plot shows deviation from normality.
@@ -1815,7 +1911,7 @@ kde <- kde2d(x, y, n = 50)
 contour(kde, main = "Contour Plot Example")
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-66-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-79-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -1831,7 +1927,7 @@ persp(
 )
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-67-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-80-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -1875,7 +1971,14 @@ If we take many samples and compute their means:
   $\mu$.  
 - The **standard error (SE)** is:
 
-SE = σ / √n
+``` r
+plot.new()
+text(0.5, 0.5,
+     expression(SE == frac(sigma, sqrt(n))),
+     cex=1.6)
+```
+
+![](stats0_md_files/figure-gfm/unnamed-chunk-81-1.png)<!-- -->
 
 $$
 SE = \frac{\sigma}{\sqrt{n}}
@@ -1898,7 +2001,7 @@ hist(sample_means,
      col = "lightblue")
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-68-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-82-1.png)<!-- -->
 
 ``` r
 mean(sample_means)
@@ -1918,6 +2021,17 @@ sd(sample_means)
 
 For two independent samples:
 
+``` r
+plot.new()
+text(0.5, 0.5,
+     expression(
+       SE == sqrt( sigma[1]^2 / n[1] + sigma[2]^2 / n[2] )
+     ),
+     cex = 1.6)
+```
+
+![](stats0_md_files/figure-gfm/unnamed-chunk-83-1.png)<!-- -->
+
 $$
 SE = \sqrt{ \frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2} }
 $$
@@ -1935,6 +2049,15 @@ approximately normal.
 ## Sampling Distribution of p (Proportion)
 
 For a proportion $$p$$:
+
+``` r
+plot.new()
+text(0.5, 0.5,
+     expression(SE == sqrt(p*(1-p)/n)),
+     cex=1.6)
+```
+
+![](stats0_md_files/figure-gfm/unnamed-chunk-84-1.png)<!-- -->
 
 $$
 SE = \sqrt{\frac{p(1 - p)}{n}}
@@ -1988,7 +2111,7 @@ hist(sample_means,
      col = "lightgreen")
 ```
 
-![](stats0_md_files/figure-gfm/unnamed-chunk-70-1.png)<!-- -->
+![](stats0_md_files/figure-gfm/unnamed-chunk-86-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -2069,7 +2192,12 @@ information.
 
 For sample variance:
 
-df = n − 1
+``` r
+plot.new()
+text(0.5, 0.5, expression(df == n - 1), cex=1.6)
+```
+
+![](stats0_md_files/figure-gfm/unnamed-chunk-89-1.png)<!-- -->
 
 $$
 df = n - 1
@@ -2090,7 +2218,14 @@ $$
 A confidence interval provides a **range of plausible values** for a
 parameter:
 
-CI = Point Estimate ± Margin of Error
+``` r
+plot.new()
+text(0.5, 0.5,
+     expression(CI == "Point Estimate" %+-% "Margin of Error"),
+     cex=1.4)
+```
+
+![](stats0_md_files/figure-gfm/unnamed-chunk-90-1.png)<!-- -->
 
 $$
 CI = \text{Point Estimate} \pm \text{Margin of Error}
@@ -2104,15 +2239,11 @@ For a mean:
 
 Using known population SD:
 
-CI = x̄ ± z\* · (σ / √n)
-
 $$
 CI = \bar{x} \pm z^* \frac{\sigma}{\sqrt{n}}
 $$
 
 Using sample SD (t‑distribution):
-
-CI = x̄ ± t\* · (s / √n)
 
 $$
 CI = \bar{x} \pm t^* \frac{s}{\sqrt{n}}
