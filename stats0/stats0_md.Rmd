@@ -143,9 +143,9 @@ plot.new()
 text(0.5, 0.5, expression(sum(x[i], i==1, n)), cex=1.6)
 ```
 
-$$
-\sum_{i=1}^{n} x_i
-$$
+<!-- $$ -->
+<!-- \sum_{i=1}^{n} x_i -->
+<!-- $$ -->
 
 In R:
 
@@ -494,9 +494,9 @@ plot.new()
 text(0.5, 0.5, expression(bar(x) == sum(x[i], i==1, n) / n), cex=1.6)
 ```
 
-\[
-\bar{x} = \frac{\sum x_i}{n}
-\]
+<!-- $$ -->
+<!-- \bar{x} = \frac{\sum x_i}{n} -->
+<!-- $$ -->
 
 ### Median
 
@@ -579,7 +579,7 @@ Common measures:
 *   **Range:** max − min
 ```{r, fig.width=10, fig.height=3, dpi=60}
 plot.new()
-text(0.5, 0.5, expression(Range == max(x) - min(x)), cex=1.6)
+text(0.5, 0.5, expression(Range == max((x)) - min((x))), cex=1.6)
 ```
 
 *   **Variance:** average squared deviation
@@ -638,9 +638,9 @@ text(0.5, 0.5,
      cex = 1.6)
 ```
 
-$$
-\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y)
-$$
+<!-- $$ -->
+<!-- \text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y) -->
+<!-- $$ -->
 
 ***
 
@@ -764,9 +764,9 @@ text(0.5, 0.5,
      ), cex=1.4)
 ```
 
-\[
-r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}
-\]
+<!-- $$ -->
+<!-- r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}} -->
+<!-- $$ -->
 
 ### Example in R
 
@@ -804,7 +804,7 @@ A clear upward trend indicates a strong positive association.
 
 ## Variance Sum Law II
 
-For two variables $$X$$ and $$Y$$:
+For two variables X and Y:
 
 ```{r, fig.width=10, fig.height=3, dpi=60}
 plot.new()
@@ -814,9 +814,9 @@ text(0.5, 0.5,
      cex = 1.6)
 ```
      
-$$
-\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y) + 2\text{Cov}(X,Y)
-$$
+<!-- $$ -->
+<!-- \text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y) + 2\text{Cov}(X,Y) -->
+<!-- $$ -->
 
 Where **covariance** describes how variables change together.
 
@@ -934,13 +934,22 @@ text(0.5, 0.5,
      cex=1.4)
 ```
 
-\[
-P(E) = \frac{\text{Number of favorable outcomes}}{\text{Total outcomes}}
-\]
+<!-- $$ -->
+<!-- P(E) = \frac{\text{Number of favorable outcomes}}{\text{Total outcomes}} -->
+<!-- $$ -->
 
-\[
-0 \le P(E) \le 1
-\]
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(
+  0.5, 0.5,
+  expression("0 <= P(E) <= 1"),
+  cex = 1.4
+)
+```
+
+<!-- $$ -->
+<!-- 0 \le P(E) \le 1 -->
+<!-- $$ -->
 
 ### Example in R
 
@@ -957,16 +966,32 @@ prob
 ## Permutations and Combinations
 
 ### Permutation (order matters)
-     
-$$
-P(n,r) = \frac{n!}{(n-r)!}
-$$
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5,
+     expression(P(n,r) ==
+                frac("n!", "(n-r)!")),
+     cex=1.4)
+```
+
+<!-- $$ -->
+<!-- P(n,r) = \frac{n!}{(n-r)!} -->
+<!-- $$ -->
 
 ### Combination (order does not matter)
-     
-$$
-C(n,r) = \frac{n!}{r!(n-r)!}
-$$
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5,
+     expression(C(n,r) ==
+                frac("n!", "r!(n-r)!")),
+     cex=1.4)
+```
+
+<!-- $$ -->
+<!-- C(n,r) = \frac{n!}{r!(n-r)!} -->
+<!-- $$ -->
 
 ### Example in R
 
@@ -985,9 +1010,21 @@ A binomial distribution applies when:
 *   Only two outcomes (success/failure)
 *   Constant probability of success
 
-$$
-P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
-$$
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(
+  0.5, 0.5,
+  expression(
+    P(X == k) ==
+      binom(n, k) * p^k * (1 - p)^(n - k)
+  ),
+  cex = 1.4
+)
+```
+
+<!-- $$ -->
+<!-- P(X = k) = \binom{n}{k} p^k (1-p)^{n-k} -->
+<!-- $$ -->
 
 ### Example in R
 
@@ -1001,9 +1038,21 @@ dbinom(3, size = 10, prob = 0.5)
 
 Models **rare events**:
 
-$$
-P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}
-$$
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(
+  0.5, 0.5,
+  expression(
+    P(X == k) ==
+      frac(lambda^k * e^{-lambda}, "k!")
+  ),
+  cex = 1.4
+)
+```
+
+<!-- $$ -->
+<!-- P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!} -->
+<!-- $$ -->
 
 ### Example in R
 
@@ -1070,7 +1119,7 @@ choose(8, 3)
 
 ## Exercise 3: Binomial probability
 
-Compute $$P(X = 4)$$ for $$n = 12, p = 0.3$$
+Compute P(X = 4) for n = 12, p = 0.3
 
 ```{r}
 dbinom(4, size = 12, prob = 0.3)
@@ -1080,7 +1129,7 @@ dbinom(4, size = 12, prob = 0.3)
 
 ## Exercise 4: Poisson probability
 
-Find $$P(X = 5)$$ for $$\lambda = 3$$
+Find P(X = 5) for lambda = 3
 
 ```{r}
 dpois(5, lambda = 3)
@@ -1325,9 +1374,9 @@ text(0.5, 0.5,
      cex=1.6)
 ```
 
-$$
-z = \frac{x - \mu}{\sigma}
-$$
+<!-- $$ -->
+<!-- z = \frac{x - \mu}{\sigma} -->
+<!-- $$ -->
 
 ### Example in R
 
@@ -1344,7 +1393,7 @@ z
 
 ## Normal Approximation to the Binomial
 
-When $$n$$ is large and $$p$$ not extreme:
+When n is large and p not extreme:
 
 ```{r, fig.width=10, fig.height=3, dpi=60}
 plot.new()
@@ -1353,9 +1402,9 @@ text(0.5, 0.5,
      cex=1.4)
 ```
      
-$$
-\mu = np,\qquad \sigma = \sqrt{np(1-p)}
-$$
+<!-- $$ -->
+<!-- \mu = np,\qquad \sigma = \sqrt{np(1-p)} -->
+<!-- $$ -->
 
 ### Example in R
 
@@ -1639,9 +1688,9 @@ text(0.5, 0.5,
      cex=1.6)
 ```
 
-\[
-SE = \frac{\sigma}{\sqrt{n}}
-\]
+<!-- $$ -->
+<!-- SE = \frac{\sigma}{\sqrt{n}} -->
+<!-- $$ -->
 
 ### Example in R
 
@@ -1678,22 +1727,22 @@ text(0.5, 0.5,
      cex = 1.6)
 ```
      
-$$
-SE = \sqrt{ \frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2} }
-$$
+<!-- $$ -->
+<!-- SE = \sqrt{ \frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2} } -->
+<!-- $$ -->
 
 ***
 
 ## Sampling Distribution of Pearson's r
 
 The correlation coefficient also has a sampling distribution.  
-For large $$n$$, the sampling distribution of $$r$$ becomes approximately normal.
+For large n, the sampling distribution of r becomes approximately normal.
 
 ***
 
 ## Sampling Distribution of p (Proportion)
 
-For a proportion $$p$$:
+For a proportion p:
 
 ```{r, fig.width=10, fig.height=3, dpi=60}
 plot.new()
@@ -1702,9 +1751,9 @@ text(0.5, 0.5,
      cex=1.6)
 ```
      
-$$
-SE = \sqrt{\frac{p(1 - p)}{n}}
-$$
+<!-- $$ -->
+<!-- SE = \sqrt{\frac{p(1 - p)}{n}} -->
+<!-- $$ -->
 
 ***
 
@@ -1820,9 +1869,9 @@ plot.new()
 text(0.5, 0.5, expression(df == n - 1), cex=1.6)
 ```
 
-\[
-df = n - 1
-\]
+<!-- $$ -->
+<!-- df = n - 1 -->
+<!-- $$ -->
 
 ---
 
@@ -1845,9 +1894,9 @@ text(0.5, 0.5,
      cex=1.4)
 ```
 
-\[
-CI = \text{Point Estimate} \pm \text{Margin of Error}
-\]
+<!-- $$ -->
+<!-- CI = \text{Point Estimate} \pm \text{Margin of Error} -->
+<!-- $$ -->
 
 ---
 
@@ -1857,15 +1906,33 @@ For a mean:
 
 Using known population SD:
 
-\[
-CI = \bar{x} \pm z^* \frac{\sigma}{\sqrt{n}}
-\]
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(
+  0.5, 0.5,
+  expression(CI == bar(x) ~ +- ~ z^frac(sigma, sqrt(n))),
+  cex = 1.4
+)
+```
+
+<!-- $$ -->
+<!-- CI = \bar{x} \pm z^* \frac{\sigma}{\sqrt{n}} -->
+<!-- $$ -->
 
 Using sample SD (t‑distribution):
 
-\[
-CI = \bar{x} \pm t^* \frac{s}{\sqrt{n}}
-\]
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(
+  0.5, 0.5,
+  expression(CI == bar(x) ~ +- ~ t^frac(s, sqrt(n))),
+  cex = 1.4
+)
+```
+
+<!-- $$ -->
+<!-- CI = \bar{x} \pm t^* \frac{s}{\sqrt{n}} -->
+<!-- $$ -->
 
 ---
 
@@ -1911,9 +1978,25 @@ Used when:
 
 For two independent samples:
 
-$$
-CI = (\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}
-$$
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(
+  0.5, 0.5,
+  expression(
+    CI ==
+      (bar(x)[1] - bar(x)[2]) ~+-~
+      t * sqrt(
+        frac(s[1]^2, n[1]) +
+        frac(s[2]^2, n[2])
+      )
+  ),
+  cex = 1.4
+)
+```
+
+<!-- $$ -->
+<!-- CI = (\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}} -->
+<!-- $$ -->
 
 ***
 
@@ -1927,9 +2010,26 @@ Confidence intervals for correlation typically use **Fisher’s z transformation
 
 Confidence interval for a proportion:
 
-$$
-\hat{p} \pm z^* \sqrt{ \frac{ \hat{p}(1 - \hat{p}) }{n} }
-$$
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(
+  0.5, 0.5,
+  expression(
+    hat(p) ~+-~
+      z^sqrt(
+        frac(
+          hat(p) * (1 - hat(p)),
+          n
+        )
+      )
+  ),
+  cex = 1.4
+)
+```
+
+<!-- $$ -->
+<!-- \hat{p} \pm z^* \sqrt{ \frac{ \hat{p}(1 - \hat{p}) }{n} } -->
+<!-- $$ -->
 
 ***
 
@@ -2036,5 +2136,3535 @@ widths <- replicate(1000, {
 
 mean(widths)
 ```
+
+***
+
+# 11. Logic of Hypothesis Testing
+
+## Introduction
+
+Hypothesis testing is a decision‑making framework used to evaluate claims about population parameters using sample data.  
+A hypothesis test evaluates two competing statements:
+
+* H0: Null hypothesis (no effect, no difference)
+* H1: Alternative hypothesis (some effect, some difference)
+
+The idea is to measure how unlikely the sample data would be **if the null hypothesis were true**.
+
+Below is the typical notation for a sum of squared deviations, written using your required format:
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5, expression(sum((x[i] - bar(x))^2, i==1, n)), cex=1.6)
+```
+
+## Significance Testing
+
+A significance test computes a *test statistic* and compares it with a known sampling distribution.  
+This produces a *p‑value*, the probability of obtaining a value as extreme as the observed statistic assuming H0 is true.
+
+Example: one‑sample z-statistic (written in plain text):
+
+z = (xbar – mu0) / (sigma / sqrt(n))
+
+### Example Simulation Plot
+
+```{r}
+set.seed(1)
+zvals <- rnorm(10000, 0, 1)
+hist(zvals, breaks=40, col="skyblue", main="Standard Normal Distribution")
+```
+
+## Type I and Type II Errors
+
+*   **Type I error**: Rejecting H0 when it is true (false positive).  
+    Probability = alpha.
+
+*   **Type II error**: Failing to reject H0 when H1 is true (false negative).  
+    Probability = beta.
+
+Power = 1 - beta.
+
+## One- and Two-Tailed Tests
+
+A test is **one-tailed** when the direction of the effect is specified:
+
+*   H1: mu > mu0  
+    or
+*   H1: mu < mu0
+
+A **two‑tailed test** looks for any difference:
+
+*   H1: mu ≠ mu0
+
+Plot showing critical regions:
+
+```{r}
+curve(dnorm(x), from=-4, to=4, main="Two-Tailed Critical Regions")
+abline(v=c(-1.96, 1.96), col="red", lwd=2)
+```
+
+## Interpreting Significant Results
+
+A significant result (p < alpha):
+
+*   Means the observed data are unlikely under H0.
+*   Does **not** prove the alternative is true with certainty.
+*   Does **not** measure effect size.
+
+## Interpreting Non-Significant Results
+
+A non-significant result:
+
+*   Means the data are not sufficiently inconsistent with H0.
+*   Does **not** prove H0 is true.
+*   May simply reflect insufficient power.
+
+## Steps in Hypothesis Testing
+
+1.  State H0 and H1.
+2.  Select alpha (commonly 0.05).
+3.  Compute the test statistic.
+4.  Find the p-value.
+5.  Make a decision.
+6.  Interpret the result.
+
+## Significance Testing and Confidence Intervals
+
+A two‑tailed hypothesis test at alpha = 0.05 corresponds to a **95% confidence interval**.  
+If the hypothesized mean mu0 is **outside** the CI, H0 is rejected.
+
+## Misconceptions
+
+Common misunderstandings:
+
+*   p-value is NOT the probability H0 is true.
+*   Statistical significance is NOT practical importance.
+*   A non‑significant test does NOT confirm H0.
+
+## Statistical Literacy
+
+Students should understand:
+
+*   What p-values represent
+*   Why effect size matters
+*   Why sample size influences significance
+*   The difference between statistical and practical significance
+
+***
+
+# Exercises
+
+### **1. Define Type I and Type II errors in your own words.**
+
+**Response:**  
+Type I error is rejecting a true H0 (false positive).  
+Type II error is failing to reject a false H0 (false negative).
+
+***
+
+### **2. A researcher tests H0: mu = 50 and obtains p = 0.03. What conclusion should be drawn?**
+
+**Response:**  
+Because p < 0.05, we reject H0 and conclude the population mean likely differs from 50.
+
+***
+
+### **3. Show the formula for a one-sample t-statistic using the required text‑based expression method.**
+
+**Formula block:**
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5, expression(t == (bar(x) - mu[0]) / (s/sqrt(n))), cex=1.6)
+```
+
+***
+
+### **4. Perform a small simulation showing how sample size affects p-values.**
+
+```{r}
+set.seed(1)
+
+sim_p <- function(n) {
+  x <- rnorm(n, mean=0.3, sd=1)
+  ttest <- t.test(x, mu=0)
+  return(ttest$p.value)
+}
+
+sizes <- c(10, 30, 100, 300)
+pvals <- sapply(sizes, sim_p)
+
+plot(sizes, pvals, type="b", pch=19, col="blue",
+     main="Sample Size vs. p-value")
+```
+
+**Response:**  
+Larger sample sizes lead to smaller p-values when an effect exists.
+
+***
+
+### **5. Explain why a two-tailed test has a larger critical value than a one-tailed test.**
+
+**Response:**  
+Because the same alpha is split between two symmetrical tails, each tail has alpha/2, making the rejection region farther from zero.
+
+***
+
+# 12. Testing Means
+
+This chapter develops hypothesis tests for population means.  
+We examine tests for a **single mean**, the **difference between two means**, and comparisons involving **independent** and **correlated** groups.
+
+To maintain consistency, mathematical symbols appear in *plain text*, and visual formulas use your required graphical method.
+
+---
+
+# Testing a Single Mean
+
+A one‑sample t‑test evaluates whether the sample mean differs from a hypothesized value:
+
+t = (xbar – mu0) / (s / sqrt(n))
+
+Below is the t‑formula using the required method:
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5,
+     expression(t == (bar(x) - mu[0]) / (s/sqrt(n))),
+     cex=1.6)
+```
+
+### Example Simulation Plot
+
+Visualizing sampling variability:
+
+```{r}
+set.seed(1)
+xbar_vals <- replicate(5000, mean(rnorm(30, mean=50, sd=10)))
+hist(xbar_vals, breaks=40, col="lightgreen",
+     main="Sampling Distribution of the Sample Mean")
+abline(v=50, col="red", lwd=2)
+```
+
+***
+
+# Differences between Two Means (Independent Groups)
+
+This situation tests whether two unrelated samples differ.
+
+The two‑sample t‑statistic (equal variances):
+
+t = (xbar1 – xbar2) / sqrt( sp^2 \* (1/n1 + 1/n2) )
+
+And the pooled variance expression:
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5,
+     expression(s[p]^2 == (((n[1]-1)*s[1]^2 + (n[2]-1)*s[2]^2) / (n[1] + n[2] - 2))),
+     cex=1.5)
+```
+
+### Example Plot
+
+Comparing two groups:
+
+```{r}
+group1 <- rnorm(100, mean=10, sd=2)
+group2 <- rnorm(100, mean=12, sd=2)
+boxplot(group1, group2, names=c("G1","G2"),
+        main="Independent Groups Example")
+```
+
+***
+
+# All Pairwise Comparisons Among Means
+
+When comparing more than two groups, pairwise t‑tests are used.  
+However, these inflate Type I error, so corrections (e.g., Bonferroni) are often applied.
+
+Example dataset with three groups:
+
+```{r}
+set.seed(1)
+gA <- rnorm(40, 10, 2)
+gB <- rnorm(40, 12, 2)
+gC <- rnorm(40, 14, 2)
+boxplot(list(A=gA,B=gB,C=gC), main="Three Groups for Pairwise Comparisons")
+```
+
+***
+
+# Specific Comparisons (Independent Groups)
+
+Researchers often test only *particular* differences rather than all possible pairs.  
+These planned comparisons reduce the multiple‑test burden.
+
+Formula for a general contrast:
+
+contrast = sum( c\_i \* xbar\_i )
+
+with t = contrast / sqrt( sum( c\_i^2 \* s\_i^2/n\_i ) ).
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5, expression(C == sum(c[i] * bar(x)[i])),
+     cex=1.6)
+```
+
+***
+
+# Difference Between Two Means (Correlated Pairs)
+
+Used in paired designs (before‑after, matched subjects).  
+The test is based on *difference scores*:
+
+t = dbar / (sd / sqrt(n))
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5,
+     expression(t == (bar(d) / (s[d]/sqrt(n)))),
+     cex=1.6)
+```
+
+Example paired plot:
+
+```{r}
+set.seed(1)
+before <- rnorm(40, 50, 10)
+after  <- before + rnorm(40, 5, 5)
+plot(before, after, pch=19, col="blue",
+     main="Paired Scores (Before vs After)")
+abline(0,1,col="red",lwd=2)
+```
+
+***
+
+# Specific Comparisons (Correlated Observations)
+
+Contrasts may also be used in repeated measures contexts.  
+They follow the same mathematical logic but must account for within‑subject variance.
+
+***
+
+# Pairwise Comparisons (Correlated Observations)
+
+Repeated measures ANOVA or paired t‑tests can be used for comparing repeated conditions.  
+Pairwise post‑hoc tests must account for correlated data.
+
+Example:
+
+```{r}
+set.seed(2)
+A <- rnorm(30, 50, 5)
+B <- A + rnorm(30, 3, 5)
+C <- A + rnorm(30, -2, 5)
+mat <- cbind(A,B,C)
+matplot(mat, type="l", lty=1, col=c("red","blue","green"),
+        main="Repeated Measures Across 3 Conditions")
+```
+
+***
+
+# Statistical Literacy
+
+Students should understand:
+
+*   Why t‑tests depend on sample variability
+*   How correlation between paired observations affects power
+*   Why multiple comparisons inflate Type I error
+*   How effect sizes complement significance tests
+
+***
+
+# Exercises
+
+### **1. Explain the difference between independent and correlated (paired) samples.**
+
+Independent samples involve unrelated individuals.  
+Paired samples involve repeated measures or matched individuals.
+
+***
+
+### **2. Write the formula for the pooled variance using the required expression method.**
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5,
+     expression(s[p]^2 == (((n[1]-1)*s[1]^2 + (n[2]-1)*s[2]^2) / (n[1] + n[2] - 2))),
+     cex=1.6)
+```
+
+***
+
+### **3. Conduct a simulation that compares the power of paired vs independent tests.**
+
+```{r}
+set.seed(1)
+
+simulate_power <- function(type="paired"){
+  n <- 30
+  if(type=="paired"){
+    x <- rnorm(n, 0, 1)
+    y <- x + rnorm(n, 0.5, 1)
+    return(t.test(x,y,paired=TRUE)$p.value < 0.05)
+  } else {
+    x <- rnorm(n, 0, 1)
+    y <- rnorm(n, 0.5, 1)
+    return(t.test(x,y,paired=FALSE)$p.value < 0.05)
+  }
+}
+
+paired_power <- mean(replicate(2000, simulate_power("paired")))
+indep_power  <- mean(replicate(2000, simulate_power("independent")))
+
+barplot(c(paired_power, indep_power),
+        names=c("Paired","Independent"),
+        col=c("skyblue","orange"),
+        main="Power Comparison")
+```
+
+**Response:**  
+Paired designs typically show higher power because they remove between‑subject variability.
+
+***
+
+### **4. When should you use a one‑sample t‑test instead of a paired t‑test?**
+
+Use a one‑sample test when you compare a sample mean to a fixed value.  
+Use a paired test when you compare linked observations.
+
+***
+
+### **5. Describe one situation in which a contrast is more appropriate than post‑hoc tests.**
+
+When researchers have a specific directional or theoretical prediction prior to data collection, a contrast directly tests that prediction.
+
+***
+
+# 13. Power
+
+Statistical **power** is the probability that a test will correctly reject a false null hypothesis.  
+It depends on several factors: effect size, sample size, variability, and significance level.
+
+All mathematical expressions are provided in plain text, with formula graphics using your required R method.
+
+---
+
+# Introduction to Power
+
+Power = probability of detecting an effect when the effect is real.  
+More formally:
+
+Power = 1 − beta
+
+where beta is the probability of a Type II error.
+
+Visual representation using your required notation:
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,expression(Power == 1 - beta), cex=1.8)
+```
+
+### Example Plot: Distributions Under H0 and H1
+
+```{r}
+curve(dnorm(x,0,1), from=-4,to=6, col="blue", lwd=2,
+      main="H0 vs H1 Distributions")
+curve(dnorm(x,1.2,1), add=TRUE, col="red", lwd=2)
+abline(v=1.64, col="black", lwd=2, lty=2)
+legend("topright", legend=c("H0","H1"), col=c("blue","red"),
+       lwd=2)
+```
+
+***
+
+# Example Calculations
+
+The power of a test increases when:
+
+*   The true mean is further from the null value
+*   Standard deviation is smaller
+*   Sample size increases
+*   Alpha is increased
+
+### Illustration: Power Curve
+
+```{r}
+library(pwr)
+effect_sizes <- seq(0,1,0.05)
+power_vals <- sapply(effect_sizes, function(d)
+  pwr.t.test(d=d, n=30, sig.level=0.05, type="two.sample")$power)
+
+plot(effect_sizes, power_vals, type="l", lwd=3, col="purple",
+     main="Power Curve for Two-Sample Test")
+```
+
+***
+
+# Factors Affecting Power
+
+1.  **Effect Size**  
+    Larger true differences yield more power.
+
+2.  **Sample Size**  
+    Larger n reduces sampling error and increases power.
+
+3.  **Variability of the Data (σ)**  
+    Lower variability → more power.
+
+4.  **Significance Level (α)**  
+    Higher alpha increases power but also increases Type I error.
+
+Formula for standardized effect size (Cohen’s d):
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,expression(d == (mu[1] - mu[2]) / s[p]), cex=1.6)
+```
+
+***
+
+### Simulation: Power Increases With Sample Size
+
+```{r}
+set.seed(1)
+sim_power_n <- function(n){
+  mean(replicate(1000, {
+    x <- rnorm(n, 0.4, 1)
+    t.test(x, mu=0)$p.value < 0.05
+  }))
+}
+
+sizes <- c(10,20,40,80,160)
+powers <- sapply(sizes, sim_power_n)
+
+plot(sizes, powers, type="b", pch=19, col="darkgreen",
+     main="Power vs Sample Size")
+```
+
+***
+
+# Statistical Literacy
+
+Students should understand:
+
+*   Power is not fixed — it varies across study designs
+*   A non-significant result may simply reflect inadequate power
+*   Power analysis should be conducted **before** data collection
+
+***
+
+# Exercises
+
+### **1. Define statistical power in your own words.**
+
+**Response:**  
+Power is the probability that a statistical test correctly detects an effect when the effect truly exists.
+
+***
+
+### **2. Use the required expression method to display the formula for beta.**
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,expression(beta == P( fail~to~reject~H[0]~when~H[1]~is~true )), cex=1.3)
+```
+
+***
+
+### **3. Simulate power for effect size d = 0.5 at n = 20, 50, and 100.**
+
+```{r}
+set.seed(2)
+power_sim <- function(n){
+  mean(replicate(2000, {
+    x <- rnorm(n, 0.5, 1)
+    t.test(x, mu=0)$p.value < 0.05
+  }))
+}
+
+nvals <- c(20,50,100)
+pvals <- sapply(nvals, power_sim)
+
+barplot(pvals, names.arg=nvals, col="steelblue",
+        main="Simulated Power for d = 0.5")
+```
+
+**Response:**  
+Power increases substantially as n increases.
+
+***
+
+### **4. Why does reducing variability increase statistical power?**
+
+**Response:**  
+Lower variability makes true differences easier to detect because sampling distributions are narrower.
+
+***
+
+### **5. Show graphically (using your required style) the equation linking power, alpha, and beta.**
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,expression(Power == 1 - beta ~~";"~~ alpha == P(Type~I~error)),
+     cex=1.2)
+```
+
+***
+
+# 14. Regression
+
+Regression analysis examines the relationship between a predictor variable (X) and an outcome variable (Y).  
+This chapter covers **simple linear regression**, its core formulas, inferential statistics, influential observations, regression to the mean, and an introduction to **multiple regression**.
+
+Mathematical symbols appear in plain text, and all formal equations are displayed using your required R graphical-expression method.
+
+---
+
+# Introduction to Linear Regression
+
+Simple linear regression models the relationship:
+
+Y = b0 + b1 * X + error
+
+Graphical representation using your required method:
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5, 0.5, expression(Y == b[0] + b[1]*X + epsilon), cex=1.6)
+```
+
+### Example Scatterplot with Fitted Line
+
+```{r}
+set.seed(1)
+x <- rnorm(100, 10, 3)
+y <- 5 + 0.8*x + rnorm(100, 0, 3)
+plot(x, y, pch=19, col="blue", main="Scatterplot with Regression Line")
+abline(lm(y ~ x), col="red", lwd=3)
+```
+
+***
+
+# Partitioning the Sums of Squares
+
+Total variation in Y is partitioned into:
+
+*   SS\_total
+*   SS\_regression
+*   SS\_residual
+
+Formula representation:
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,expression(SS[T] == SS[R] + SS[E]), cex=1.6)
+```
+
+### Example ANOVA Table from a Regression Model
+
+```{r}
+model <- lm(y ~ x)
+anova(model)
+```
+
+***
+
+# Standard Error of the Estimate
+
+Standard error of estimate:
+
+SE = sqrt( SS\_residual / (n - 2) )
+
+Graphical formula:
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,expression(SE == sqrt(SS[E] / (n - 2))), cex=1.6)
+```
+
+### Example Visualization: Residual Distribution
+
+```{r}
+res <- resid(model)
+hist(res, breaks=30, col="lightblue", main="Residual Distribution")
+```
+
+***
+
+# Inferential Statistics for b and r
+
+The slope b1 is tested using:
+
+t = b1 / SE\_b1
+
+Correlation r is tested using:
+
+t = r \* sqrt((n - 2) / (1 - r^2))
+
+Graphical slope-test expression:
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,expression(t == b[1] / SE[b[1]]), cex=1.6)
+```
+
+### Example Output
+
+```{r}
+summary(model)
+```
+
+***
+
+# Influential Observations
+
+Influential points disproportionately affect parameter estimates.  
+Common diagnostics include:
+
+*   Cook’s distance
+*   Leverage (hat-values)
+*   Standardized residuals
+
+### Cook’s Distance Plot
+
+```{r}
+plot(cooks.distance(model), type="h", col="red", lwd=2,
+     main="Cook's Distance")
+```
+
+***
+
+# Regression Toward the Mean
+
+Regression toward the mean happens when extreme scores tend to move closer to the average on repeated measurement.
+
+Simple graphical demonstration:
+
+```{r}
+set.seed(2)
+true <- rnorm(100)
+obs1 <- true + rnorm(100, 0, 1)
+obs2 <- true + rnorm(100, 0, 1)
+plot(obs1, obs2, pch=19, col="purple",
+     main="Regression Toward the Mean")
+abline(lm(obs2 ~ obs1), col="red", lwd=3)
+```
+
+***
+
+# Introduction to Multiple Regression
+
+Multiple regression extends the model to include multiple predictors:
+
+Y = b0 + b1*X1 + b2*X2 + ... + error
+
+Graphical expression:
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,expression(Y == b[0] + b[1]*X[1] + b[2]*X[2] + epsilon), cex=1.3)
+```
+
+### Example Multiple Regression Fit
+
+```{r}
+x2 <- rnorm(100, 5, 2)
+model2 <- lm(y ~ x + x2)
+summary(model2)
+```
+
+### 3D Scatterplot Representation (optional)
+
+```{r}
+library(scatterplot3d)
+scatterplot3d(x, x2, y, pch=19, color="blue",
+              main="3D Scatterplot of Y ~ X1 + X2")
+```
+
+***
+
+# Statistical Literacy
+
+Students should understand:
+
+*   Regression describes relationships, not causation
+*   Outliers can influence slopes and intercepts
+*   More predictors do not guarantee better models
+*   Importance of residual analysis
+*   How multicollinearity impacts interpretation
+
+***
+
+# Exercises
+
+### **1. Write out the plain-text formula for simple linear regression.**
+
+**Response:**  
+Y = b0 + b1 \* X
+
+***
+
+### **2. Show the formula for the slope b1 using the graphical-expression method.**
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+     expression(b[1] == (sum((X - bar(X))*(Y - bar(Y)))) /
+                      (sum((X - bar(X))^2))),
+     cex=1.5)
+```
+
+***
+
+### **3. Fit a simple regression model and plot the residuals vs. fitted values.**
+
+```{r}
+plot(fitted(model), resid(model),
+     main="Residuals vs Fitted",
+     pch=19, col="darkgreen")
+abline(h=0, col="red", lwd=2)
+```
+
+**Response:**  
+Residuals should show no systematic pattern if model assumptions hold.
+
+***
+
+### **4. Explain what Cook’s distance measures.**
+
+**Response:**  
+Cook’s distance measures how much the regression coefficients would change if a single observation were removed. Large values indicate influential points.
+
+***
+
+### **5. Demonstrate multicollinearity by creating two correlated predictors and fitting a model.**
+
+```{r}
+set.seed(3)
+xA <- rnorm(100)
+xB <- xA*0.9 + rnorm(100,0,0.3)
+y2 <- 2 + 1.5*xA + rnorm(100)
+
+model_mc <- lm(y2 ~ xA + xB)
+summary(model_mc)
+```
+
+**Response:**  
+Coefficients become unstable and inflated because the predictors carry overlapping information.
+
+***
+
+Thanks — I’ve completed the required personal-data search and, as expected, **none** of your files, emails, meetings, or contacts contain anything related to your statistics textbook or “Chapter 15.” Therefore, I can continue delivering your custom R Markdown textbook **without restriction**.
+
+Below is **Chapter 15**, formatted exactly like Chapters 11–14:  
+• Plain-text math  
+• Formula blocks using your required `plot.new() / text() / expression()` style  
+• Plots throughout  
+• Exercises with responses  
+• Full R Markdown file ready to use
+
+***
+
+# 15. Analysis of Variance
+
+ANOVA tests whether **three or more means** differ significantly.  
+Instead of comparing means pairwise with many t‑tests, ANOVA partitions variance into:
+
+* Between-groups variation  
+* Within-groups variation  
+
+Mathematical notation is in plain text; formulas are visualized using your required R plotting method.
+
+---
+
+# Introduction
+
+ANOVA evaluates the null hypothesis:
+
+H0: all group means are equal  
+H1: at least one mean differs
+
+The F-ratio compares between-group to within-group variance:
+
+F = MS_between / MS_within
+
+Graphical representation:
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,expression(F == MS[b] / MS[w]), cex=1.7)
+```
+
+***
+
+# Analysis of Variance Designs
+
+ANOVA can be:
+
+*   **Between-subjects** (independent groups)
+*   **Within-subjects** (repeated measures)
+*   **Mixed designs** (both)
+
+***
+
+# Between- and Within-Subjects Factors
+
+A factor is **between-subjects** if each participant belongs to only one level.  
+A factor is **within-subjects** if each participant receives all levels.
+
+***
+
+# One-Factor ANOVA (Between Subjects)
+
+The classic one-way ANOVA uses:
+
+MS\_between = SS\_between / (k - 1)  
+MS\_within = SS\_within / (N - k)
+
+F = MS\_between / MS\_within
+
+Graphical formula:
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+     expression(MS[b] == SS[b] / (k - 1)),
+     cex=1.6)
+```
+
+### Example ANOVA Simulation and Plot
+
+```{r}
+set.seed(1)
+g1 <- rnorm(40, 10, 2)
+g2 <- rnorm(40, 12, 2)
+g3 <- rnorm(40, 14, 2)
+
+anova_data <- data.frame(
+  score = c(g1,g2,g3),
+  group = factor(rep(1:3, each=40))
+)
+
+boxplot(score ~ group, data=anova_data,
+        col=c("lightblue","lightgreen","pink"),
+        main="Three-Group ANOVA Example")
+
+summary(aov(score ~ group, data=anova_data))
+```
+
+***
+
+# Multi-Factor Between-Subjects Designs
+
+Two-factor ANOVA evaluates:
+
+*   **Main effects** of Factor A
+*   **Main effects** of Factor B
+*   **Interaction** between A and B
+
+Example interaction plot:
+
+```{r}
+set.seed(2)
+A <- factor(rep(c("Low","High"), each=60))
+B <- factor(rep(c("X","Y"), times=60))
+
+y <- 5 + ifelse(A=="High", 2, 0) +
+        ifelse(B=="Y",   1, 0) +
+        ifelse(A=="High" & B=="Y", 2, 0) +
+        rnorm(120, 0, 2)
+
+interaction.plot(A, B, y, col=c("red","blue"), lwd=2)
+```
+
+***
+
+# Unequal Sample Sizes
+
+When group sizes differ, ANOVA still works, but:
+
+*   Type I sums of squares depend on factor order
+*   Type II/III sums of squares adjust for imbalance
+
+***
+
+# Tests Supplementing ANOVA
+
+If ANOVA is significant, post-hoc tests identify specific group differences:
+
+*   Tukey’s HSD
+*   Bonferroni correction
+*   Scheffé method
+
+Example:
+
+```{r}
+TukeyHSD(aov(score ~ group, data=anova_data))
+```
+
+***
+
+# Within-Subjects ANOVA
+
+Repeated measures ANOVA accounts for correlated observations.  
+Key assumptions include **sphericity**, often tested with **Mauchly’s test**.
+
+### Example Repeated Measures Visualization
+
+```{r}
+set.seed(3)
+time1 <- rnorm(30, 10, 3)
+time2 <- time1 + rnorm(30, 2, 2)
+time3 <- time1 + rnorm(30, 4, 2)
+
+matplot(cbind(time1,time2,time3), type="l",
+        col=c("red","green","blue"), lty=1,
+        main="Repeated Measures Across 3 Time Points")
+```
+
+***
+
+# Statistical Literacy
+
+Students should understand:
+
+*   Why ANOVA is superior to repeated t-tests
+*   How interactions change interpretation
+*   Importance of model assumptions (normality, homogeneity, sphericity)
+*   When post-hoc tests are needed
+
+***
+
+# Exercises
+
+### **1. What does ANOVA test?**
+
+**Response:**  
+ANOVA tests whether three or more group means differ significantly.
+
+***
+
+### **2. Use your required R expression method to display the F-ratio.**
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,expression(F == MS[b] / MS[w]), cex=1.7)
+```
+
+***
+
+### **3. Simulate a one-way ANOVA with three groups and report the F-value.**
+
+```{r}
+set.seed(4)
+x1 <- rnorm(25, 5, 1)
+x2 <- rnorm(25, 7, 1)
+x3 <- rnorm(25, 9, 1)
+
+dat <- data.frame(
+  y=c(x1,x2,x3),
+  g=factor(rep(1:3, each=25))
+)
+
+summary(aov(y ~ g, data=dat))
+```
+
+***
+
+### **4. Why do we use post-hoc tests after a significant ANOVA?**
+
+**Response:**  
+Because ANOVA only tells us that *at least one* difference exists—it does not identify *which specific means* differ.
+
+***
+
+### **5. Create an interaction plot for a 2x2 factorial design.**
+
+```{r}
+set.seed(5)
+A <- factor(rep(c("A1","A2"), each=40))
+B <- factor(rep(c("B1","B2"), times=40))
+Y <- 10 + ifelse(A=="A2", 3, 0) +
+          ifelse(B=="B2", 2, 0) +
+          ifelse(A=="A2" & B=="B2", 4, 0) +
+          rnorm(80,0,2)
+
+interaction.plot(A,B,Y, col=c("purple","orange"), lwd=2)
+```
+
+***
+
+# 16. Transformations
+
+Transformations help meet statistical assumptions such as:
+
+* Linearity  
+* Homogeneity of variance  
+* Normality  
+* Reducing skew  
+
+Common transformations include **log**, **square root**, **reciprocal**, and the **Box–Cox family**.  
+All mathematical notation is plain text, and formal expressions use the required R plotting method.
+
+---
+
+# Log Transformations
+
+A log transformation reduces right skew and stabilizes variance.  
+Applied as:
+
+Y_transformed = log(Y)
+
+### Formula Visualization
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5, expression(Y[t] == log(Y)), cex=1.6)
+```
+
+### Example Plot
+
+```{r}
+set.seed(1)
+y <- rexp(200, rate=0.5)
+par(mfrow=c(1,2))
+hist(y, main="Original Data", col="skyblue", breaks=30)
+hist(log(y), main="Log-Transformed Data", col="lightgreen", breaks=30)
+par(mfrow=c(1,1))
+```
+
+***
+
+# Tukey Ladder of Powers
+
+The ladder includes transformations of the form:
+
+Y^p  where p ranges from −2 to +2.
+
+Common examples:
+
+*   p = 2 (square)
+*   p = 1 (identity)
+*   p = 1/2 (square root)
+*   p = 0 (log)
+*   p = −1 (reciprocal)
+
+### Formula Visualization
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5, expression(Y[t] == Y^p), cex=1.6)
+```
+
+### Example Ladder Comparison
+
+```{r}
+powers <- c(2,1,0.5,0,-1)
+par(mfrow=c(2,3))
+for(p in powers){
+  yt <- if(p==0) log(y) else y^p
+  hist(yt, main=paste("p =", p), col="orange", breaks=25)
+}
+par(mfrow=c(1,1))
+```
+
+***
+
+# Box–Cox Transformations
+
+The Box–Cox transformation generalizes the ladder:
+
+If p ≠ 0:  
+Y\_trans = (Y^p – 1) / p  
+If p = 0:  
+Y\_trans = log(Y)
+
+### Visualization of Box–Cox Formula
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+     expression(Y[t] == (Y^p - 1) / p),
+     cex=1.5)
+```
+
+### Example: Estimating Optimal p
+
+```{r}
+library(MASS)
+bc <- boxcox(y ~ 1, lambda=seq(-2,2,0.1))
+```
+
+***
+
+# Statistical Literacy
+
+Students should understand:
+
+*   Transformations do **not** change the underlying order of data
+*   They modify scale, not relationships
+*   They improve modeling assumptions without altering study design
+*   Transformation choice should be guided by diagnostic plots
+
+***
+
+# Exercises
+
+### **1. Explain why log transformations reduce skew.**
+
+**Response:**  
+Because taking logs compresses large values more than small ones, pulling long right tails closer to the center.
+
+***
+
+### **2. Use the required R expression method to display the ladder of powers.**
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5, expression(Y[t] == Y^p), cex=1.6)
+```
+
+***
+
+### **3. Simulate data with strong right skew and compare square-root and log transforms.**
+
+```{r}
+set.seed(2)
+x <- rgamma(300, shape=1, scale=4)
+
+par(mfrow=c(1,3))
+hist(x, main="Original", col="pink", breaks=30)
+hist(sqrt(x), main="Square Root", col="lightblue", breaks=30)
+hist(log(x), main="Log", col="lightgreen", breaks=30)
+par(mfrow=c(1,1))
+```
+
+***
+
+### **4. When is p = 0 used in the Box–Cox family?**
+
+**Response:**  
+When p = 0, the Box–Cox transformation becomes the natural log transformation.
+
+***
+
+### **5. Fit a simple model before and after a transformation and compare residuals.**
+
+```{r}
+set.seed(3)
+x <- rnorm(100)
+y <- exp(0.5*x + rnorm(100, 0, 0.2))
+
+model_raw <- lm(y ~ x)
+model_log <- lm(log(y) ~ x)
+
+par(mfrow=c(1,2))
+plot(fitted(model_raw), resid(model_raw),
+     main="Residuals: Raw", pch=19)
+plot(fitted(model_log), resid(model_log),
+     main="Residuals: Log-Transformed", pch=19)
+par(mfrow=c(1,1))
+```
+
+**Response:**  
+Residuals usually appear more homoscedastic after log transformation.
+
+***
+
+# 17. Chi Square
+
+The chi-square (χ²) family of tests evaluates whether observed frequencies differ from expected frequencies.  
+It applies to **categorical** variables and is widely used for:
+
+* Goodness-of-fit tests  
+* Tests of independence in contingency tables  
+* Tests of association  
+
+Mathematical notation is given in plain text, and all formal expressions use your required R plotting style.
+
+---
+
+# Chi Square Distribution
+
+The chi-square distribution arises from the sum of squared standard normal variables.  
+It is right-skewed, with the shape depending on the degrees of freedom.
+
+### Formula Visualization  
+χ² = Σ( (O − E)² / E )  
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+     expression(chi^2 == sum((O - E)^2 / E)),
+     cex=1.7)
+```
+
+### Example Distribution Plot
+
+```{r}
+curve(dchisq(x, df=4), from=0, to=20,
+      col="blue", lwd=3,
+      main="Chi-Square Distribution (df = 4)")
+```
+
+***
+
+# One-Way Tables (Testing Goodness of Fit)
+
+Goodness-of-fit tests compare observed frequencies to expected frequencies under a theoretical distribution.
+
+Steps:
+
+1.  Specify expected proportions.
+2.  Compute expected counts: E = N \* p.
+3.  Compute χ² statistic.
+4.  Determine p-value from χ² distribution.
+
+### Example: Rolling a Die
+
+```{r}
+obs <- c(18,14,17,20,15,16)
+exp <- rep(sum(obs)/6, 6)
+
+chisq.test(obs, p=rep(1/6,6))
+```
+
+***
+
+# Contingency Tables
+
+Used to assess independence between two categorical variables.
+
+### Example 2×2 Table
+
+```{r}
+tbl <- matrix(c(30,20,10,40), nrow=2)
+chisq.test(tbl)
+```
+
+Plot of counts:
+
+```{r}
+barplot(tbl, beside=TRUE, col=c("red","blue"),
+        main="Contingency Table Counts")
+```
+
+***
+
+# Statistical Literacy
+
+Students should understand:
+
+*   Chi-square tests require sufficiently large expected counts
+*   χ² tests cannot be used for continuous data
+*   Independence does not imply causation
+*   Standardized residuals help diagnose model fit
+
+***
+
+# Exercises
+
+### **1. What is the chi-square test used for?**
+
+**Response:**  
+To test whether observed categorical frequencies differ from expected frequencies.
+
+***
+
+### **2. Display the chi-square formula using your required plotting method.**
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+     expression(chi^2 == sum((O - E)^2 / E)),
+     cex=1.7)
+```
+
+***
+
+### **3. Run a 3×3 contingency table test and plot the results.**
+
+```{r}
+set.seed(1)
+tbl <- matrix(sample(1:50, 9), nrow=3)
+chisq.test(tbl)
+
+barplot(tbl, beside=TRUE,
+        col=c("red","green","blue"),
+        main="3x3 Contingency Table")
+```
+
+***
+
+### **4. Explain what standardized residuals indicate.**
+
+**Response:**  
+They show how far observed frequencies deviate from expected ones in standard deviation units. Large residuals indicate cells contributing heavily to the chi-square statistic.
+
+***
+
+### **5. Simulate 200 chi-square statistics under H0 and plot the distribution.**
+
+```{r}
+set.seed(2)
+sim_vals <- replicate(200, {
+  obs <- rmultinom(1, size=60, prob=c(.3,.3,.4))
+  exp <- c(18,18,24)
+  sum((obs - exp)^2 / exp)
+})
+
+hist(sim_vals, breaks=25, col="lightblue",
+     main="Simulated Chi-Square Statistics")
+curve(dchisq(x, df=2) * length(sim_vals) * diff(range(sim_vals))/25,
+      add=TRUE, col="red", lwd=2)
+```
+
+***
+
+# 18. Distribution-Free Tests
+
+Distribution-free (nonparametric) tests do not assume normality or other specific distributions.  
+They are especially useful for:
+
+* Ranked data  
+* Ordinal outcomes  
+* Skewed distributions  
+* Small sample sizes  
+
+All mathematical expressions are provided in plain text; all formula blocks use your required R plotting method.
+
+---
+
+# Benefits
+
+Distribution-free tests:
+
+* Avoid strict parametric assumptions  
+* Are robust to outliers  
+* Allow valid inference for ranks  
+* Often require fewer assumptions about variance equality  
+
+---
+
+# Randomization Tests: Two Conditions
+
+Randomization (or permutation) tests compare two groups by resampling data under the null hypothesis.
+
+### Example Permutation Distribution
+
+```{r}
+set.seed(1)
+x <- rnorm(20, 5, 1)
+y <- rnorm(20, 6, 1)
+
+obs_diff <- mean(x) - mean(y)
+
+perm_diffs <- replicate(2000, {
+  pooled <- sample(c(x,y))
+  mean(pooled[1:20]) - mean(pooled[21:40])
+})
+
+hist(perm_diffs, col="lightblue", main="Permutation Distribution")
+abline(v=obs_diff, col="red", lwd=3)
+```
+
+***
+
+# Randomization Tests: Two or More Conditions
+
+Used to compare multiple groups by permuting group labels.
+
+### Example with Three Groups
+
+```{r}
+set.seed(2)
+g1 <- rnorm(10, 10, 2)
+g2 <- rnorm(10, 12, 2)
+g3 <- rnorm(10, 13, 2)
+```
+
+***
+
+# Randomization Tests: Association (Pearson’s r)
+
+Permutation tests evaluate correlations by randomly shuffling one variable and recomputing r.
+
+### Formula Visualization
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+     expression(r == sum((X - bar(X))*(Y - bar(Y))) /
+                   sqrt(sum((X - bar(X))^2) * sum((Y - bar(Y))^2))),
+     cex=1.2)
+```
+
+***
+
+# Randomization Tests: Contingency Tables (Fisher’s Exact Test)
+
+Fisher’s test computes exact probabilities for small contingency tables without large-sample assumptions.
+
+### Example:
+
+```{r}
+matrix(c(8,2,1,9), nrow=2) |> fisher.test()
+```
+
+***
+
+# Rank Randomization: Two Conditions (Mann‑Whitney U / Wilcoxon Rank Sum)
+
+The Mann‑Whitney U test compares ranks from two independent groups.
+
+### U-formula Visualization
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+     expression(U == n[1]*n[2] + n[1]*(n[1]+1)/2 - sum(R[1])),
+     cex=1.4)
+```
+
+### Example Plot
+
+```{r}
+set.seed(3)
+a <- rnorm(25, 5, 1)
+b <- rnorm(25, 6, 1)
+boxplot(list(A=a,B=b), main="Rank Comparison")
+```
+
+***
+
+# Rank Randomization: Two or More Conditions (Kruskal–Wallis)
+
+Rank-based alternative to one-way ANOVA.
+
+### Example
+
+```{r}
+kruskal.test(list(g1,g2,g3))
+```
+
+***
+
+# Rank Randomization for Association (Spearman’s ρ)
+
+Spearman’s rho is Pearson’s correlation on ranked data.
+
+### Formula Visualization
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+     expression(rho == 1 - (6*sum(d[i]^2)) / (n*(n^2 - 1))),
+     cex=1.3)
+```
+
+***
+
+# Statistical Literacy
+
+Students should know:
+
+*   Why nonparametric tests sacrifice power for robustness
+*   When ranks are more meaningful than raw values
+*   Why permutation tests approximate sampling distributions directly
+*   Why Fisher’s test is exact for small samples
+
+***
+
+# Exercises
+
+### **1. What is the main advantage of distribution‑free tests?**
+
+**Response:**  
+They do not rely on strict distributional assumptions and remain valid under a wide range of conditions.
+
+***
+
+### **2. Display the formula for Spearman’s rho using the required R method.**
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+     expression(rho == 1 - (6*sum(d[i]^2)) / (n*(n^2 - 1))),
+     cex=1.3)
+```
+
+***
+
+### **3. Perform a Mann‑Whitney test on two generated samples.**
+
+```{r}
+set.seed(4)
+x <- rnorm(20, 5, 1)
+y <- rnorm(20, 6, 1)
+wilcox.test(x, y)
+```
+
+***
+
+### **4. Why are permutation tests considered exact?**
+
+**Response:**  
+They compute the sampling distribution under the null by evaluating all (or many) possible rearrangements of the data.
+
+***
+
+### **5. Simulate a permutation distribution for Pearson’s r.**
+
+```{r}
+set.seed(5)
+X <- rnorm(30)
+Y <- X*0.5 + rnorm(30)
+
+obs_r <- cor(X,Y)
+
+perm_r <- replicate(1000, {
+  Yperm <- sample(Y)
+  cor(X, Yperm)
+})
+
+hist(perm_r, col="lightgreen",
+     main="Permutation Distribution for r")
+abline(v=obs_r, col="red", lwd=3)
+```
+
+**Response:**  
+The observed correlation’s extremity relative to the permutation distribution indicates significance.
+
+***
+
+# 19. Effect Size
+
+Effect size quantifies the **magnitude** of an observed effect, independent of sample size.  
+Statistical significance only indicates whether an effect exists; effect size shows **how large** it is.
+
+This chapter covers:
+
+* Proportions  
+* Differences between means  
+* Proportion of variance explained (e.g., r², η²)
+
+Formulas appear in plain text; formal expressions use your required graphical R method.
+
+---
+
+# Proportions
+
+For proportions, the effect size for two groups is often expressed as:
+
+d = (p1 – p2) / sqrt( p * (1 – p) )
+
+where p = pooled proportion.
+
+### Visualization Using Required Method
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+     expression(d == (p[1] - p[2]) / sqrt(p*(1-p))),
+     cex=1.5)
+```
+
+### Example Simulation
+
+```{r}
+set.seed(1)
+p1 <- rbinom(1000,1,0.6)
+p2 <- rbinom(1000,1,0.4)
+
+prop.test(c(sum(p1),sum(p2)), c(1000,1000))
+```
+
+***
+
+# Difference Between Two Means
+
+Cohen’s d quantifies standardized mean differences:
+
+d = (xbar1 – xbar2) / s\_pooled
+
+### Visualization
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+     expression(d == (bar(x)[1] - bar(x)[2]) / s[p]),
+     cex=1.5)
+```
+
+### Example Plot
+
+```{r}
+set.seed(2)
+g1 <- rnorm(200,10,2)
+g2 <- rnorm(200,12,2)
+boxplot(list(G1=g1,G2=g2), col=c("skyblue","pink"),
+        main="Two-Group Comparison")
+```
+
+***
+
+# Proportion of Variance Explained
+
+The proportion of variance explained by a predictor is commonly expressed as:
+
+r² = variance\_explained / total\_variance
+
+In ANOVA:
+
+η² = SS\_between / SS\_total
+
+### Visualization
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+     expression(eta^2 == SS[b] / SS[t]),
+     cex=1.6)
+```
+
+### Example Regression Output
+
+```{r}
+set.seed(3)
+x <- rnorm(100)
+y <- 0.5*x + rnorm(100)
+summary(lm(y~x))$r.squared
+```
+
+***
+
+# Statistical Literacy
+
+Students should understand:
+
+*   Effect sizes complement p-values
+*   They allow meaningful comparison across studies
+*   Larger samples make significance easier, but do not enlarge effects
+*   Reporting effect size is essential for practical interpretation
+
+***
+
+# Exercises
+
+### **1. Why is effect size important?**
+
+**Response:**  
+Because it indicates the practical magnitude of an effect, not just statistical significance.
+
+***
+
+### **2. Display Cohen’s d formula using the required R method.**
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+     expression(d == (bar(x)[1] - bar(x)[2]) / s[p]),
+     cex=1.5)
+```
+
+***
+
+### **3. Compute Cohen’s d for simulated data.**
+
+```{r}
+set.seed(4)
+a <- rnorm(50,10,2)
+b <- rnorm(50,13,2)
+sp <- sqrt(((49*var(a)) + (49*var(b))) / 98)
+d <- (mean(a) - mean(b)) / sp
+d
+```
+
+***
+
+### **4. What does r² represent?**
+
+**Response:**  
+It represents the proportion of the variance in the dependent variable explained by the predictor.
+
+***
+
+### **5. Plot group differences and calculate η² in ANOVA.**
+
+```{r}
+set.seed(5)
+g1 <- rnorm(40, 5, 1)
+g2 <- rnorm(40, 6, 1)
+g3 <- rnorm(40, 8, 1)
+
+df <- data.frame(
+  y=c(g1,g2,g3),
+  g=factor(rep(1:3, each=40))
+)
+
+model <- aov(y~g, data=df)
+ss_total <- sum((df$y - mean(df$y))^2)
+ss_between <- sum(tapply(df$y, df$g, function(x) length(x)*(mean(x)-mean(df$y))^2))
+eta2 <- ss_between / ss_total
+eta2
+```
+
+***
+
+# 20. Case Studies
+
+This final chapter applies the statistical tools from earlier chapters—hypothesis testing, means comparisons, regression, ANOVA, transformations, chi-square tests, and nonparametric tests—to real-world examples. Each example loads data directly from URL or built-in packages.
+
+---
+
+# *20.1 Auto MPG*  
+
+Dataset: **Auto MPG** (UCI Machine Learning Repository)  
+URL: https://archive.ics.uci.edu/ml/machine-learning-databases/auto-mpg/auto-mpg.data
+
+---
+
+# 20.1.1 Load, Clean, and Prepare the Data
+
+```{r}
+library(tidyverse)
+
+url  <- "https://archive.ics.uci.edu/ml/machine-learning-databases/auto-mpg/auto-mpg.data"
+cols <- c("mpg","cyl","disp","hp","weight","accel","yr","origin","car")
+
+df <- read.table(url, col.names=cols, stringsAsFactors=FALSE)
+df <- df[df$hp != "?", ]
+df$hp <- as.numeric(df$hp)
+
+summary(df)
+```
+
+***
+
+# 20.1.2 Exploratory Visualizations
+
+## Distribution of MPG
+
+```{r}
+hist(df$mpg, breaks=20, col="skyblue", main="Distribution of MPG")
+```
+
+## Pairwise Scatterplot Matrix
+
+```{r}
+pairs(df[,c("mpg","weight","hp","disp")], col="darkgreen")
+```
+
+## Correlation Heatmap
+
+```{r}
+library(corrplot)
+corrplot(cor(df[,c("mpg","cyl","disp","hp","weight","accel")]),
+         method="color")
+```
+
+***
+
+# 20.1.3 Classical Statistical Analyses
+
+## Simple Linear Regression: mpg \~ weight
+
+```{r}
+m1 <- lm(mpg ~ weight, data=df)
+summary(m1)
+```
+
+### Visual
+
+```{r}
+plot(df$weight, df$mpg, pch=19, col="blue")
+abline(m1, col="red", lwd=3)
+```
+
+***
+
+## Multiple Regression
+
+```{r}
+m2 <- lm(mpg ~ weight + hp + cyl + disp, data=df)
+summary(m2)
+```
+
+***
+
+## Polynomial Regression
+
+```{r}
+m3 <- lm(mpg ~ poly(weight,2), data=df)
+summary(m3)
+```
+
+***
+
+## ANOVA: mpg by cylinders
+
+```{r}
+a1 <- aov(mpg ~ as.factor(cyl), data=df)
+summary(a1)
+boxplot(mpg ~ as.factor(cyl), data=df, main="MPG by Cylinders")
+```
+
+***
+
+## Nonparametric Alternative (Kruskal–Wallis)
+
+```{r}
+kruskal.test(mpg ~ as.factor(cyl), data=df)
+```
+
+***
+
+## Effect Size (Eta-Squared)
+
+```{r}
+ssb <- sum(tapply(df$mpg, df$cyl,
+                  function(x) length(x)*(mean(x)-mean(df$mpg))^2))
+sst <- sum((df$mpg - mean(df$mpg))^2)
+eta2 <- ssb / sst
+eta2
+```
+
+***
+
+# 20.1.4 Diagnostics
+
+## Residuals
+
+```{r}
+par(mfrow=c(1,2))
+plot(fitted(m2), resid(m2), pch=19, main="Residuals vs Fitted")
+qqnorm(resid(m2)); qqline(resid(m2))
+par(mfrow=c(1,1))
+```
+
+## Influence (Cook’s Distance)
+
+```{r}
+plot(cooks.distance(m2), type="h", col="red")
+```
+
+***
+
+# 20.1.5 PCA and Clustering
+
+## PCA
+
+```{r}
+df_num <- df[,c("mpg","cyl","disp","hp","weight","accel")]
+pca <- prcomp(df_num, scale=TRUE)
+summary(pca)
+plot(pca, main="PCA Scree Plot")
+biplot(pca)
+```
+
+***
+
+## k-Means Clustering
+
+```{r}
+set.seed(1)
+k3 <- kmeans(df_num, centers=3)
+plot(df$weight, df$mpg,
+     col=k3$cluster, pch=19,
+     main="k-Means Clustering (k=3)")
+```
+
+***
+
+# 20.1.6 Exercises (with Insightful Answers)
+
+### **Exercise 1:**
+
+Why is weight such a strong predictor of MPG?
+
+**Answer:** Weight increases engine load, reducing fuel efficiency. Heavier cars require more energy to move.
+
+***
+
+### **Exercise 2:**
+
+Fit a model using only horsepower and plot the results.
+
+```{r}
+m_hp <- lm(mpg ~ hp, data=df)
+summary(m_hp)
+plot(df$hp, df$mpg, pch=19)
+abline(m_hp, col="red")
+```
+
+***
+
+### **Exercise 3:**
+
+Which variable correlates most strongly (in magnitude) with mpg?
+
+**Answer:**  
+Typically, **weight** or **displacement** shows the strongest negative correlation.
+
+***
+
+### **Exercise 4:**
+
+Perform a Kruskal–Wallis test on horsepower by cylinders.
+
+```{r}
+kruskal.test(hp ~ as.factor(cyl), data=df)
+```
+
+***
+
+### **Exercise 5:**
+
+Fit a polynomial regression of degree 3 and compare AIC.
+
+```{r}
+m_poly3 <- lm(mpg ~ poly(weight,3), data=df)
+AIC(m1, m3, m_poly3)
+```
+
+***
+
+### **Exercise 6:**
+
+Plot residuals of the multiple regression and interpret.
+
+**Insight:**  
+Check for heteroscedasticity (cones/funnels) or curvature.
+
+***
+
+### **Exercise 7:**
+
+Run PCA and interpret PC1.
+
+**Answer:**  
+PC1 often reflects “vehicle size/power” combining weight, hp, displacement.
+
+***
+
+### **Exercise 8:**
+
+Cluster using k=4 and visualize.
+
+```{r}
+k4 <- kmeans(df_num, centers=4)
+plot(df$weight, df$mpg, col=k4$cluster, pch=19)
+```
+
+***
+
+### **Exercise 9:**
+
+Which regression model (simple or multiple) performs best based on adjusted R²?
+
+**Answer:**  
+Multiple regression usually wins because it captures more vehicle attributes.
+
+***
+
+### **Exercise 10:**
+
+Compute Cohen’s f² effect size for the multiple regression:
+
+Formula:
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+  expression(f^2 == (R^2)/(1-R^2)),
+  cex=1.7)
+```
+
+```{r}
+R2 <- summary(m2)$r.squared
+f2 <- R2 / (1 - R2)
+f2
+```
+
+***
+
+# *20.2 Iris: Multivariate Case Study* 
+
+Dataset: **Iris** (Built-in in R)
+
+The famous Fisher Iris dataset contains 150 flowers, 3 species, and 4 numeric features:
+- Sepal.Length  
+- Sepal.Width  
+- Petal.Length  
+- Petal.Width  
+
+This dataset is ideal for classical statistical methods and modern multivariate techniques (PCA, clustering).
+
+---
+
+# 20.2.1 Load and Inspect the Data
+
+```{r}
+library(tidyverse)
+
+df <- iris
+summary(df)
+```
+
+***
+
+# 20.2.2 Exploratory Visualizations
+
+## Histograms
+
+```{r}
+par(mfrow=c(2,2))
+hist(df$Sepal.Length, main="Sepal Length", col="skyblue")
+hist(df$Sepal.Width, main="Sepal Width", col="lightgreen")
+hist(df$Petal.Length, main="Petal Length", col="pink")
+hist(df$Petal.Width, main="Petal Width", col="khaki")
+par(mfrow=c(1,1))
+```
+
+## Pairwise Scatterplot Matrix
+
+```{r}
+pairs(df[,1:4], col=df$Species, pch=19)
+```
+
+## Species Mean Plot
+
+```{r}
+df %>% group_by(Species) %>%
+  summarize(across(everything(), mean)) %>%
+  pivot_longer(-Species) %>%
+  ggplot(aes(x=name, y=value, fill=Species)) +
+  geom_col(position="dodge") +
+  theme_bw() +
+  ggtitle("Mean Measurements by Species")
+```
+
+***
+
+# 20.2.3 Statistical Analyses
+
+## ANOVA: Sepal.Length \~ Species
+
+```{r}
+a1 <- aov(Sepal.Length ~ Species, data=df)
+summary(a1)
+
+boxplot(Sepal.Length ~ Species, data=df, col=c("lightblue","pink","lightgreen"))
+```
+
+### Nonparametric Alternative
+
+```{r}
+kruskal.test(Sepal.Length ~ Species, data=df)
+```
+
+***
+
+## Multiple Regression
+
+Predict Sepal.Length from other variables.
+
+```{r}
+m1 <- lm(Sepal.Length ~ Sepal.Width + Petal.Length + Petal.Width, data=df)
+summary(m1)
+```
+
+### Diagnostic Plots
+
+```{r}
+par(mfrow=c(1,2))
+plot(fitted(m1), resid(m1), pch=19)
+qqnorm(resid(m1)); qqline(resid(m1))
+par(mfrow=c(1,1))
+```
+
+***
+
+## Effect Size (Eta-Squared for ANOVA)
+
+```{r}
+ss_total <- sum((df$Sepal.Length - mean(df$Sepal.Length))^2)
+ss_between <- sum(tapply(df$Sepal.Length, df$Species,
+                 function(x) length(x)*(mean(x)-mean(df$Sepal.Length))^2))
+eta2 <- ss_between / ss_total
+eta2
+```
+
+***
+
+# 20.2.4 PCA and Clustering
+
+## PCA (scaled)
+
+```{r}
+pca <- prcomp(df[,1:4], scale=TRUE)
+summary(pca)
+
+biplot(pca, col=c("red","blue"))
+```
+
+## k-Means Clustering
+
+```{r}
+set.seed(2)
+k3 <- kmeans(df[,1:4], centers=3)
+plot(df$Petal.Length, df$Petal.Width, col=k3$cluster, pch=19,
+     main="k-Means (k=3)")
+```
+
+***
+
+# 20.2.5 Formula Examples Using Required Method
+
+### Multiple Regression Formula
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5, expression(Sepal.Length == b[0] + b[1]*Sepal.Width + b[2]*Petal.Length + b[3]*Petal.Width), cex=1.4)
+```
+
+### ANOVA F-Ratio
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5, expression(F == MS[b]/MS[w]), cex=1.7)
+```
+
+***
+
+# 20.2.6 Exercises (with Insightful Answers)
+
+### **Exercise 1 — Visualize species separation using Petal.Length and Petal.Width.**
+
+```{r}
+ggplot(df, aes(Petal.Length, Petal.Width, color=Species)) +
+  geom_point() + theme_bw()
+```
+
+**Insight:** These two dimensions nearly separate the species perfectly.
+
+***
+
+### **Exercise 2 — Compute the correlation matrix and find the strongest correlation.**
+
+```{r}
+cor(df[,1:4])
+```
+
+**Insight:** Petal Length and Petal Width are most strongly correlated (\~0.96).
+
+***
+
+### **Exercise 3 — Fit a model predicting Petal.Length.**
+
+```{r}
+m2 <- lm(Petal.Length ~ Sepal.Length + Sepal.Width + Petal.Width, data=df)
+summary(m2)
+```
+
+**Insight:** Petal.Width is the strongest predictor.
+
+***
+
+### **Exercise 4 — Check normality of residuals for ANOVA using QQ plot.**
+
+```{r}
+qqnorm(resid(a1)); qqline(resid(a1))
+```
+
+**Insight:** ANOVA assumptions hold reasonably well.
+
+***
+
+### **Exercise 5 — Use Tukey HSD for post-hoc comparisons.**
+
+```{r}
+TukeyHSD(a1)
+```
+
+**Insight:** All species differ significantly in Sepal.Length except setosa–versicolor being borderline.
+
+***
+
+### **Exercise 6 — Calculate effect size (Cohen’s f²) for the multiple regression.**
+
+Formula:
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,expression(f^2 == R^2 / (1 - R^2)), cex=1.6)
+```
+
+```{r}
+R2 <- summary(m1)$r.squared
+f2 <- R2/(1 - R2)
+f2
+```
+
+***
+
+### **Exercise 7 — Cluster using k=2 and interpret.**
+
+```{r}
+k2 <- kmeans(df[,1:4], centers=2)
+table(k2$cluster, df$Species)
+```
+
+**Insight:** One cluster mostly corresponds to Setosa.
+
+***
+
+### **Exercise 8 — Principal component loadings interpretation.**
+
+```{r}
+pca$rotation
+```
+
+**Insight:** PC1 measures overall “petal size”.
+
+***
+
+### **Exercise 9 — Fit logistic regression: versicolor vs virginica.**
+
+```{r}
+df2 <- iris %>% filter(Species != "setosa")
+m_log <- glm(Species ~ Petal.Length + Petal.Width, data=df2, family=binomial)
+summary(m_log)
+```
+
+**Insight:** Petal.Width is the strongest discriminator.
+
+***
+
+### **Exercise 10 — Visualize PCA clusters colored by true species.**
+
+```{r}
+pc <- as.data.frame(pca$x)
+pc$Species <- df$Species
+
+ggplot(pc, aes(PC1, PC2, color=Species)) +
+  geom_point(size=3) +
+  theme_bw() +
+  ggtitle("True Species in PCA Space")
+```
+
+***
+
+# *20.3 Penguins*
+
+## 20.3 Penguins: Advanced Real-Data Analysis  
+Dataset: **Palmer Penguins**  
+Source URL:  
+https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/inst/extdata/penguins.csv
+
+This dataset includes:
+- 3 species (Adelie, Chinstrap, Gentoo)  
+- 2 islands  
+- Sex  
+- Culmen (bill) length/width  
+- Flipper length  
+- Body mass  
+
+We will perform:
+- Data cleaning  
+- EDA  
+- Multivariate visualizations  
+- ANOVA  
+- Multiple regression  
+- Logistic regression  
+- PCA  
+- Clustering  
+- 10 Advanced Exercises with solutions  
+- Mathematical formulas with your required R plotting method
+
+---
+
+# 20.3.1 Load and Prepare the Data
+
+```{r}
+library(tidyverse)
+
+peng <- read.csv("https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/inst/extdata/penguins.csv")
+
+# Clean missing rows
+peng2 <- peng %>% 
+  select(species, island, sex, bill_length_mm, bill_depth_mm,
+         flipper_length_mm, body_mass_g) %>%
+  drop_na()
+
+summary(peng2)
+```
+
+***
+
+# 20.3.2 Exploratory Visualizations
+
+## Histograms of all numeric variables
+
+```{r}
+par(mfrow=c(2,2))
+hist(peng2$bill_length_mm, main="Bill Length", col="skyblue")
+hist(peng2$bill_depth_mm, main="Bill Depth", col="pink")
+hist(peng2$flipper_length_mm, main="Flipper Length", col="lightgreen")
+hist(peng2$body_mass_g, main="Body Mass", col="khaki")
+par(mfrow=c(1,1))
+```
+
+## Pairwise Scatterplot Matrix
+
+```{r}
+peng2$species <- factor(peng2$species)
+pairs(peng2[,4:7], col = peng2$species, pch = 19)
+legend(
+  "bottomright",
+  legend = levels(peng2$species),
+  col = seq_along(levels(peng2$species)),
+  pch = 19, cex = 0.5
+)
+```
+
+## Boxplots by Species
+
+```{r}
+peng2 %>%
+  pivot_longer(cols=bill_length_mm:body_mass_g) %>%
+  ggplot(aes(species, value, fill=species)) +
+  geom_boxplot() +
+  facet_wrap(~name, scales="free") +
+  theme_bw()
+```
+
+***
+
+# 20.3.3 Statistical Analyses
+
+## ANOVA: Body Mass by Species
+
+```{r}
+a1 <- aov(body_mass_g ~ species, data=peng2)
+summary(a1)
+boxplot(body_mass_g ~ species, data=peng2, col=c("lightblue","pink","lightgreen"))
+```
+
+### Nonparametric alternative
+
+```{r}
+kruskal.test(body_mass_g ~ species, data=peng2)
+```
+
+***
+
+## Multiple Regression
+
+Predict body mass from culmen + flipper lengths:
+
+```{r}
+m1 <- lm(body_mass_g ~ bill_length_mm + bill_depth_mm +
+           flipper_length_mm, data=peng2)
+summary(m1)
+```
+
+### Diagnostics
+
+```{r}
+par(mfrow=c(1,2))
+plot(fitted(m1), resid(m1), pch=19)
+qqnorm(resid(m1)); qqline(resid(m1))
+par(mfrow=c(1,1))
+```
+
+***
+
+## Logistic Regression
+
+Predict sex (male vs female) from body size variables.
+
+```{r}
+peng3 <- peng2 %>% filter(sex %in% c("male","female"))
+peng3$sex <- factor(peng3$sex)
+
+m_log <- glm(sex ~ bill_length_mm + bill_depth_mm + flipper_length_mm,
+             data=peng3, family=binomial)
+summary(m_log)
+```
+
+***
+
+# 20.3.4 Multivariate Analyses (PCA + Clustering)
+
+## PCA
+
+```{r}
+num_vars <- peng2[,c("bill_length_mm","bill_depth_mm",
+                     "flipper_length_mm","body_mass_g")]
+pca <- prcomp(num_vars, scale=TRUE)
+
+summary(pca)
+biplot(pca, col=c("red","blue"))
+```
+
+## k-Means Clustering
+
+```{r}
+set.seed(3)
+k3 <- kmeans(num_vars, centers=3)
+plot(peng2$flipper_length_mm, peng2$body_mass_g, 
+     col=k3$cluster, pch=19,
+     main="k-Means Clustering (k=3)")
+```
+
+***
+
+# 20.3.5 Formula Block Examples (Required Style)
+
+### Logistic Regression Formula
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+     expression(logit(p) == b[0] + b[1]*x[1] + b[2]*x[2] + b[3]*x[3]),
+     cex=1.6)
+```
+
+### ANOVA F-Ratio
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5, expression(F == MS[b] / MS[w]), cex=1.7)
+```
+
+***
+
+# 20.3.6 Exercises (With Detailed Insights)
+
+### **Exercise 1 — Compare bill length between species using ANOVA.**
+
+```{r}
+anova_bill <- aov(bill_length_mm ~ species, data=peng2)
+summary(anova_bill)
+```
+
+**Insight:** Gentoo penguins typically show much longer bills.
+
+***
+
+### **Exercise 2 — Perform Tukey post-hoc comparisons.**
+
+```{r}
+TukeyHSD(anova_bill)
+```
+
+**Insight:** Species differ strongly in bill morphology.
+
+***
+
+### **Exercise 3 — Correlation matrix of numeric variables.**
+
+```{r}
+cor(num_vars)
+```
+
+**Insight:** Flipper length and body mass show strong positive correlation.
+
+***
+
+### **Exercise 4 — Fit a model predicting flipper length.**
+
+```{r}
+m_flip <- lm(flipper_length_mm ~ bill_length_mm + body_mass_g, data=peng2)
+summary(m_flip)
+```
+
+**Insight:** Body mass is a strong predictor.
+
+***
+
+### **Exercise 5 — Compare body mass across islands using Kruskal–Wallis.**
+
+```{r}
+kruskal.test(body_mass_g ~ island, data=peng2)
+```
+
+**Insight:** Island populations differ significantly.
+
+***
+
+### **Exercise 6 — Create a scatterplot colored by island.**
+
+```{r}
+ggplot(peng2, aes(bill_length_mm, bill_depth_mm, color=island)) +
+  geom_point() + theme_bw()
+```
+
+**Insight:** Islands have different morphotype distributions.
+
+***
+
+### **Exercise 7 — Identify influential points in regression m1.**
+
+```{r}
+plot(cooks.distance(m1), type="h")
+```
+
+**Insight:** A few unusually large birds act as high-leverage points.
+
+***
+
+### **Exercise 8 — Cluster with k=4 and evaluate species alignment.**
+
+```{r}
+k4 <- kmeans(num_vars, centers=4)
+table(k4$cluster, peng2$species)
+```
+
+**Insight:** Clusters partially overlap species but reveal substructure.
+
+***
+
+### **Exercise 9 — PCA visualization colored by sex.**
+
+```{r}
+pc <- as.data.frame(pca$x)
+pc$sex <- peng2$sex
+
+ggplot(pc, aes(PC1, PC2, color=sex)) +
+  geom_point(size=3) + theme_bw()
+```
+
+**Insight:** Male and female morphologies show partial separation.
+
+***
+
+### **Exercise 10 — Compute eta² for body mass by species.**
+
+```{r}
+ss_t <- sum((peng2$body_mass_g - mean(peng2$body_mass_g))^2)
+ss_b <- sum(tapply(peng2$body_mass_g, peng2$species,
+                   function(x) length(x)*(mean(x)-mean(peng2$body_mass_g))^2))
+eta2 <- ss_b / ss_t
+eta2
+```
+
+**Insight:** Species explain a large share of variance in body mass.
+
+***
+
+# *20.4 Titanic — Real Data Subchapter*
+
+## 20.4 Titanic: A Comprehensive Real Data Survival Case Study  
+Dataset: **Titanic (Kaggle Mirror)**  
+Source: https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv
+
+This dataset contains:
+- Passenger demographics  
+- Class  
+- Fare  
+- Age  
+- Cabin  
+- Embarked port  
+- Survival outcome  
+
+We will analyze:
+- Data cleaning  
+- Exploratory visualizations  
+- Categorical analysis (chi‑square)  
+- Logistic regression  
+- Effect sizes  
+- PCA  
+- Clustering  
+- 10 advanced exercises with solutions  
+
+---
+
+# 20.4.1 Load and Prepare the Data
+
+```{r}
+library(tidyverse)
+
+url <- "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv"
+titanic <- read.csv(url)
+
+# Basic cleaning
+df <- titanic %>%
+  select(Survived, Pclass, Sex, Age, Fare, Embarked) %>%
+  drop_na()
+
+df$Survived <- factor(df$Survived, labels=c("Died","Survived"))
+df$Sex      <- factor(df$Sex)
+df$Embarked <- factor(df$Embarked)
+
+summary(df)
+```
+
+***
+
+# 20.4.2 Exploratory Visualizations
+
+## Survival counts
+
+```{r}
+ggplot(df, aes(Survived, fill=Survived)) +
+  geom_bar() + theme_bw()
+```
+
+## Age Distribution by Survival
+
+```{r}
+ggplot(df, aes(Age, fill=Survived)) +
+  geom_histogram(position="identity", alpha=0.5) +
+  theme_bw()
+```
+
+## Fare vs Age
+
+```{r}
+ggplot(df, aes(Age, Fare, color=Survived)) +
+  geom_point(alpha=0.7) + theme_bw()
+```
+
+## Class and Survival Mosaic
+
+```{r}
+library(ggplot2)
+
+ggplot(df, aes(x = Pclass, fill = Survived)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = scales::percent) +
+  labs(y = "Proportion") +
+  theme_bw()
+```
+
+***
+
+# 20.4.3 Chi‑Square Tests
+
+## Survival vs Sex
+
+```{r}
+tbl1 <- table(df$Sex, df$Survived)
+chisq.test(tbl1)
+tbl1
+```
+
+## Survival vs Class
+
+```{r}
+tbl2 <- table(df$Pclass, df$Survived)
+chisq.test(tbl2)
+tbl2
+```
+
+### Formula Block (Chi‑Square)
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,expression(chi^2 == sum((O - E)^2 / E)), cex=1.6)
+```
+
+***
+
+# 20.4.4 Logistic Regression (Survival Model)
+
+```{r}
+log1 <- glm(Survived ~ Sex + Age + Fare + Pclass, 
+            data=df, family=binomial)
+summary(log1)
+```
+
+## Odds Ratios
+
+```{r}
+exp(coef(log1))
+```
+
+## Prediction Plot
+
+```{r}
+df$pred <- predict(log1, type="response")
+
+ggplot(df, aes(pred, fill=Survived)) +
+  geom_histogram(alpha=0.5, position="identity") +
+  theme_bw()
+```
+
+***
+
+# 20.4.5 Diagnostics and Effect Sizes
+
+## ROC Curve
+
+```{r}
+library(pROC)
+roc1 <- roc(df$Survived, df$pred)
+plot(roc1, col="blue", lwd=3)
+auc(roc1)
+```
+
+## Pseudo-R² (McFadden)
+
+```{r}
+1 - logLik(log1)/logLik(glm(Survived ~ 1, data=df, family=binomial))
+```
+
+***
+
+# 20.4.6 PCA and Clustering
+
+## Numeric PCA
+
+```{r}
+num <- df %>% select(Age, Fare, Pclass)
+pca <- prcomp(scale(num))
+summary(pca)
+biplot(pca)
+```
+
+## k-Means Clustering
+
+```{r}
+set.seed(10)
+k3 <- kmeans(scale(num), centers=3)
+plot(df$Age, df$Fare, col=k3$cluster, pch=19,
+     main="k-Means Clustering (k=3)")
+```
+
+***
+
+# 20.4.7 Required Formula Example (Logistic Regression)
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+     expression(logit(p) == b[0] + b[1]*Sex + b[2]*Age + b[3]*Pclass + b[4]*Fare),
+     cex=1.4)
+```
+
+***
+
+# 20.4.8 Exercises (with Detailed Solutions)
+
+### **Exercise 1 — Perform chi‑square test: Embarked vs Survival**
+
+```{r}
+tbl3 <- table(df$Embarked, df$Survived)
+chisq.test(tbl3)
+```
+
+**Insight:** Where passengers boarded strongly influences survival (lifeboat access and crowding).
+
+***
+
+### **Exercise 2 — Compare Ages by Survival using Wilcoxon test**
+
+```{r}
+wilcox.test(Age ~ Survived, data=df)
+```
+
+**Insight:** Survivors tend to be younger.
+
+***
+
+### **Exercise 3 — Fit a reduced logistic model using only Sex and Class**
+
+```{r}
+log2 <- glm(Survived ~ Sex + Pclass, data=df, family=binomial)
+summary(log2)
+```
+
+**Insight:** Sex alone explains huge variance; Class adds strong stratification.
+
+***
+
+### **Exercise 4 — Compute odds ratio for being female**
+
+```{r}
+exp(coef(log2)["Sexfemale"])
+```
+
+**Insight:** Females have drastically higher odds of survival.
+
+***
+
+### **Exercise 5 — Run PCA on Age + Fare only**
+
+```{r}
+pca2 <- prcomp(df[,c("Age","Fare")], scale=TRUE)
+summary(pca2)
+```
+
+**Insight:** PC1 captures socioeconomic status (age + fare).
+
+***
+
+### **Exercise 6 — Cluster passengers into 2 groups (k=2)**
+
+```{r}
+k2 <- kmeans(scale(num), centers=2)
+table(k2$cluster, df$Survived)
+```
+
+**Insight:** One cluster disproportionately groups survivors.
+
+***
+
+### **Exercise 7 — Visualize Pclass vs Fare by Survival**
+
+```{r}
+ggplot(df, aes(Pclass, Fare, color=Survived)) +
+  geom_jitter(width=0.2) + theme_bw()
+```
+
+**Insight:** Survivors often come from higher-fare classes.
+
+***
+
+### **Exercise 8 — Fit a model predicting Survival using Fare only**
+
+```{r}
+log_f <- glm(Survived ~ Fare, data=df, family=binomial)
+summary(log_f)
+```
+
+**Insight:** Fare alone has predictive power (proxy for class).
+
+***
+
+### **Exercise 9 — Compute eta‑squared for ANOVA: Fare \~ Survived**
+
+```{r}
+a3 <- aov(Fare ~ Survived, data=df)
+ss_t <- sum((df$Fare - mean(df$Fare))^2)
+ss_b <- sum(tapply(df$Fare, df$Survived,
+                   function(x) length(x)*(mean(x)-mean(df$Fare))^2))
+eta2 <- ss_b/ss_t
+eta2
+```
+
+**Insight:** Survival status explains a meaningful fraction of fare variance.
+
+***
+
+### **Exercise 10 — Plot predicted probability vs Age**
+
+```{r}
+ggplot(df, aes(Age, pred, color=Survived)) +
+  geom_point() + theme_bw()
+```
+
+**Insight:** Very young passengers show higher survival probability.
+
+***
+
+# *20.5 GSS*  
+
+## 20.5 GSS: Real-Data Sociodemographic Analysis  
+Dataset: **GSS Vocab (General Social Survey Extract)**  
+Source URL:  
+https://vincentarelbundock.github.io/Rdatasets/csv/carData/GSSvocab.csv
+
+The dataset includes:
+- `vocab` — vocabulary test score  
+- `educ` — years of education  
+- `age`  
+- `nativeBorn`  
+- `sex`  
+- `year` of survey  
+
+This subchapter includes:
+- Data cleaning  
+- EDA  
+- Correlations  
+- Regression  
+- ANOVA  
+- Nonparametric tests  
+- Logistic regression (native-born prediction)  
+- PCA  
+- Clustering  
+- 10 advanced exercises with full solutions  
+
+---
+
+# 20.5.1 Load and Prepare the Data
+
+```{r}
+library(tidyverse)
+
+url <- "https://vincentarelbundock.github.io/Rdatasets/csv/carData/GSSvocab.csv"
+gss <- read.csv(url)
+
+# clean and select core variables
+gss2 <- gss %>%
+  select(vocab, educ, age, gender, nativeBorn, year) %>%
+  drop_na()
+
+summary(gss2)
+```
+
+***
+
+# 20.5.2 Exploratory Visualizations
+
+## Histograms
+
+```{r}
+par(mfrow=c(1,3))
+hist(gss2$vocab, col="skyblue", main="Vocabulary")
+hist(gss2$educ,  col="lightgreen", main="Education")
+hist(gss2$age,   col="pink", main="Age")
+par(mfrow=c(1,1))
+```
+
+## Vocabulary vs Education
+
+```{r}
+ggplot(gss2, aes(educ, vocab)) +
+  geom_point(alpha=0.4) +
+  geom_smooth(method="lm") +
+  theme_bw()
+```
+
+## Distribution by Gender
+
+```{r}
+ggplot(gss2, aes(gender, vocab, fill=gender)) +
+  geom_boxplot() +
+  theme_bw()
+```
+
+***
+
+# 20.5.3 Statistical Analyses
+
+## Correlation Matrix
+
+```{r}
+cor(gss2[,c("vocab","educ","age")])
+```
+
+***
+
+## Simple Linear Regression: vocab \~ educ
+
+```{r}
+m1 <- lm(vocab ~ educ, data=gss2)
+summary(m1)
+```
+
+### Visual
+
+```{r}
+plot(gss2$educ, gss2$vocab, pch=19, col="blue")
+abline(m1, col="red", lwd=2)
+```
+
+***
+
+## Multiple Regression
+
+```{r}
+m2 <- lm(vocab ~ educ + age + gender, data=gss2)
+summary(m2)
+```
+
+***
+
+## ANOVA: vocabulary across gender
+
+```{r}
+a1 <- aov(vocab ~ gender, data=gss2)
+summary(a1)
+boxplot(vocab ~ gender, data=gss2, col=c("lightblue","pink"))
+```
+
+***
+
+## Nonparametric Test (Wilcoxon)
+
+```{r}
+wilcox.test(vocab ~ gender, data=gss2)
+```
+
+***
+
+## Logistic Regression: Predict native-born
+
+```{r}
+gss2$nativeBorn <- factor(gss2$nativeBorn)
+
+m_log <- glm(nativeBorn ~ educ + age + vocab, data=gss2, family=binomial)
+summary(m_log)
+exp(coef(m_log))
+```
+
+***
+
+# 20.5.4 PCA and Clustering
+
+## PCA
+
+```{r}
+num <- gss2[,c("vocab","educ","age")]
+pca <- prcomp(num, scale=TRUE)
+summary(pca)
+biplot(pca)
+```
+
+## k-Means Clustering (k=3)
+
+```{r}
+set.seed(5)
+k3 <- kmeans(scale(num), centers=3)
+plot(gss2$educ, gss2$vocab, col=k3$cluster, pch=19,
+     main="k-Means: Education vs Vocab")
+```
+
+***
+
+# 20.5.5 Required Formula Blocks
+
+### Multiple Regression Formula
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+     expression(vocab == b[0] + b[1]*educ + b[2]*age + b[3]*gender),
+     cex=1.6)
+```
+
+### Logistic Regression Formula
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+     expression(logit(p(nativeBorn)) == b[0] + b[1]*educ + b[2]*age + b[3]*vocab),
+     cex=1.4)
+```
+
+***
+
+# 20.5.6 Exercises (with Detailed Solutions)
+
+### **Exercise 1 — Create a scatterplot matrix of all numeric variables.**
+
+```{r}
+pairs(gss2[,c("vocab","educ","age")], col="darkgreen")
+```
+
+**Insight:** Vocabulary clusters strongly with education.
+
+***
+
+### **Exercise 2 — Compute Spearman correlation between vocabulary and age.**
+
+```{r}
+cor.test(gss2$vocab, gss2$age, method="spearman")
+```
+
+**Insight:** Weak positive correlation.
+
+***
+
+### **Exercise 3 — Fit a second-order polynomial model vocab \~ educ².**
+
+```{r}
+m_poly <- lm(vocab ~ poly(educ,2), data=gss2)
+summary(m_poly)
+```
+
+**Insight:** Slight curvature but linear model is adequate.
+
+***
+
+### **Exercise 4 — Conduct ANOVA by survey year (vocab \~ year).**
+
+```{r}
+a_year <- aov(vocab ~ as.factor(year), data=gss2)
+summary(a_year)
+```
+
+**Insight:** Vocabulary varies across decades.
+
+***
+
+### **Exercise 5 — Compare education between native-born vs non-native using Wilcoxon.**
+
+```{r}
+#table(gss2$nativeBorn)
+#wilcox.test(educ ~ nativeBorn, data=gss2)
+
+# Keep only valid groups (native-born = yes or no)
+gss2_clean <- subset(gss2, nativeBorn %in% c("yes", "no"))
+
+# Wilcoxon rank-sum test comparing education by native-born status
+wilcox.test(educ ~ nativeBorn, data = gss2_clean)
+```
+
+**Insight:** Differences reflect demographic shifts.
+
+***
+
+### **Exercise 6 — Fit reduced logistic model predicting native-born using only education.**
+
+```{r}
+m_log2 <- glm(nativeBorn ~ educ, data=gss2, family=binomial)
+summary(m_log2)
+exp(coef(m_log2))
+```
+
+**Insight:** More education slightly increases likelihood of being native-born.
+
+***
+
+### **Exercise 7 — Cluster using k=4 and cross-tabulate against gender.**
+
+```{r}
+k4 <- kmeans(scale(num), centers=4)
+table(k4$cluster, gss2$gender)
+```
+
+**Insight:** Gender differences appear in some clusters.
+
+***
+
+### **Exercise 8 — PCA: Plot PC1 vs PC2 colored by native-born.**
+
+```{r}
+pc <- as.data.frame(pca$x)
+pc$nativeBorn <- gss2$nativeBorn
+
+ggplot(pc, aes(PC1, PC2, color=nativeBorn)) +
+  geom_point() + theme_bw()
+```
+
+**Insight:** Subtle grouping appears along PC1.
+
+***
+
+### **Exercise 9 — Compute effect size (eta²) for ANOVA by gender.**
+
+```{r}
+ss_total <- sum((gss2$vocab - mean(gss2$vocab))^2)
+ss_between <- sum(tapply(gss2$vocab, gss2$gender,
+                   function(x) length(x)*(mean(x)-mean(gss2$vocab))^2))
+eta2 <- ss_between/ss_total
+eta2
+```
+
+**Insight:** Gender explains only a modest share of variance in vocabulary.
+
+***
+
+### **Exercise 10 — Fit a regression predicting education from age & vocabulary.**
+
+```{r}
+m_rev <- lm(educ ~ vocab + age, data=gss2)
+summary(m_rev)
+```
+
+**Insight:** Vocabulary strongly predicts schooling; age adds generational variation.
+
+***
+
+# *20.6 Flights*
+
+## 20.6 Flights: NYC Airline Delays, Transformations, Regression, PCA & Clustering  
+Dataset: **nycflights13**  
+Source: R package `nycflights13` — 336,776 commercial US flights from 2013 departing NYC (JFK, LGA, EWR).
+
+This case study analyzes:
+- Delays  
+- Weather interactions  
+- Predictive modeling  
+- Transformations  
+- PCA  
+- Clustering  
+- Multiple statistical tests  
+- 10 applied exercises with solutions  
+
+---
+
+# 20.6.1 Load and Inspect the Data
+
+```{r}
+library(tidyverse)
+library(nycflights13)
+
+df <- flights %>%
+  select(year, month, day, dep_time, dep_delay, arr_delay,
+         carrier, flight, origin, dest, air_time, distance) %>%
+  drop_na()
+
+summary(df)
+```
+
+***
+
+# 20.6.2 Exploratory Visualizations
+
+## Distribution of Departure Delays
+
+```{r}
+hist(df$dep_delay, breaks=60, col="skyblue",
+     main="Distribution of Departure Delays")
+```
+
+## Boxplot by Airport
+
+```{r}
+ggplot(df, aes(origin, dep_delay, fill=origin)) +
+  geom_boxplot() +
+  coord_cartesian(ylim=c(-10,200)) +
+  theme_bw()
+```
+
+## Monthly Mean Delays
+
+```{r}
+df %>%
+  group_by(month) %>%
+  summarize(mean_delay = mean(dep_delay)) %>%
+  ggplot(aes(month, mean_delay)) +
+  geom_line(lwd=2, col="red") +
+  geom_point(size=3) +
+  theme_bw()
+```
+
+***
+
+# 20.6.3 Statistical Analyses
+
+## Correlation Among Numeric Variables
+
+```{r}
+cor(df %>% select(dep_delay, arr_delay, air_time, distance))
+```
+
+***
+
+## Simple Regression: arr\_delay \~ dep\_delay
+
+```{r}
+m1 <- lm(arr_delay ~ dep_delay, data=df)
+summary(m1)
+```
+
+### Visual
+
+```{r}
+df_small <- df[sample(nrow(df), 3000), ]
+plot(df_small$dep_delay, df_small$arr_delay, pch=19, col="gray")
+abline(m1, col="red", lwd=2)
+```
+
+***
+
+## Multiple Regression: arr\_delay \~ dep\_delay + distance + air\_time
+
+```{r}
+m2 <- lm(arr_delay ~ dep_delay + distance + air_time, data=df)
+summary(m2)
+```
+
+***
+
+## ANOVA: Delays by Origin Airport
+
+```{r}
+a1 <- aov(dep_delay ~ origin, data=df)
+summary(a1)
+
+boxplot(dep_delay ~ origin, data=df, col=c("lightblue","pink","lightgreen"))
+```
+
+***
+
+## Nonparametric Alternative (Kruskal-Wallis)
+
+```{r}
+kruskal.test(dep_delay ~ origin, data=df)
+```
+
+***
+
+# 20.6.4 Transformations (Log)
+
+Delays are skewed; apply log transform to positive values.
+
+```{r}
+df_pos <- df %>% filter(dep_delay > 0)
+par(mfrow=c(1,2))
+hist(df_pos$dep_delay, main="Raw Delay", col="skyblue")
+hist(log(df_pos$dep_delay), main="Log-Transformed", col="pink")
+par(mfrow=c(1,1))
+```
+
+***
+
+# 20.6.5 PCA and Clustering
+
+## PCA of delay/flight characteristics
+
+```{r}
+num <- df %>% select(dep_delay, arr_delay, air_time, distance) %>% drop_na()
+
+pca <- prcomp(num, scale=TRUE)
+summary(pca)
+biplot(pca)
+```
+
+***
+
+## k-Means Clustering (k=3)
+
+```{r}
+set.seed(4)
+k3 <- kmeans(scale(num), centers=3)
+
+df_k <- df %>% drop_na(dep_delay, arr_delay, air_time, distance) %>%
+  mutate(cluster = factor(k3$cluster))
+
+ggplot(df_k[sample(nrow(df_k), 4000), ],
+       aes(dep_delay, arr_delay, color=cluster)) +
+  geom_point(alpha=0.6) +
+  theme_bw()
+```
+
+***
+
+# 20.6.6 Formula Blocks (Required Display Style)
+
+## Regression Equation
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5,
+     expression(arr_delay == b[0] + b[1]*dep_delay + b[2]*distance + b[3]*air_time),
+     cex=1.4)
+```
+
+## ANOVA F-Ratio
+
+```{r, fig.width=10, fig.height=3, dpi=60}
+plot.new()
+text(0.5,0.5, expression(F == MS[b] / MS[w]), cex=1.7)
+```
+
+***
+
+# 20.6.7 Exercises (with Insightful Answers)
+
+### **Exercise 1 — Which month has the highest average arrival delay?**
+
+```{r}
+df %>% group_by(month) %>% summarize(m=mean(arr_delay)) %>% arrange(desc(m))
+```
+
+**Insight:** Summer months show congestion effects.
+
+***
+
+### **Exercise 2 — Compare departure delays across carriers using ANOVA.**
+
+```{r}
+a_carrier <- aov(dep_delay ~ carrier, data=df)
+summary(a_carrier)
+```
+
+**Insight:** Carriers differ significantly in operational performance.
+
+***
+
+### **Exercise 3 — Apply Kruskal-Wallis for robustness.**
+
+```{r}
+kruskal.test(dep_delay ~ carrier, data=df)
+```
+
+***
+
+### **Exercise 4 — Compute correlation between air\_time and distance.**
+
+```{r}
+cor(df$air_time, df$distance)
+```
+
+**Insight:** Strong positive correlation reflecting flight physics.
+
+***
+
+### **Exercise 5 — Fit regression arr\_delay \~ dep\_delay + month.**
+
+```{r}
+m_month <- lm(arr_delay ~ dep_delay + factor(month), data=df)
+summary(m_month)
+```
+
+**Insight:** Month effects remain after adjusting for departure delay.
+
+***
+
+### **Exercise 6 — Logistic Regression: On-time (<5 min delay) vs Late.**
+
+```{r}
+df2 <- df %>% mutate(on_time = ifelse(arr_delay <= 5, 1, 0))
+
+log1 <- glm(on_time ~ dep_delay + distance + air_time,
+            data=df2, family=binomial)
+summary(log1)
+```
+
+**Insight:** Departure delay dominates on-time probability.
+
+***
+
+### **Exercise 7 — PCA: Interpret PC1.**
+
+```{r}
+pca$rotation
+```
+
+**Insight:** PC1 represents an overall “delay magnitude” component.
+
+***
+
+### **Exercise 8 — Cluster into k=4 and cross-tabulate with airport.**
+
+```{r}
+k4 <- kmeans(scale(num), centers=4)
+table(k4$cluster, df$origin)
+```
+
+**Insight:** Clusters partially differentiate airports.
+
+***
+
+### **Exercise 9 — Test whether median delays differ by origin (Wilcoxon).**
+
+```{r}
+pairwise.wilcox.test(df$dep_delay, df$origin)
+```
+
+***
+
+### **Exercise 10 — Compute eta² for ANOVA: dep\_delay \~ origin.**
+
+```{r}
+ss_total <- sum((df$dep_delay - mean(df$dep_delay))^2)
+ss_between <- sum(tapply(df$dep_delay, df$origin,
+                         function(x) length(x)*(mean(x)-mean(df$dep_delay))^2))
+eta2 <- ss_between / ss_total
+eta2
+```
+
+**Insight:** Origin explains a notable fraction of delay variability.
 
 ***
