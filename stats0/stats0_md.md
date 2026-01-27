@@ -167,7 +167,15 @@ The summation symbol:
 
 $$
 \sum_{i=1}^{n} x_i
-$$
+$$ \$ \_{i=1}^{n} x_i \$
+
+$`
+\sum_{i=1}^{n} x_i
+`$
+
+``` math
+\sum_{i=1}^{n} x_i\
+```
 
 In R:
 
