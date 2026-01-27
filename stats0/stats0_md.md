@@ -163,6 +163,8 @@ hist(height,
 
 The summation symbol:
 
+Σ xi (i = 1 to n)
+
 $$
 \sum_{i=1}^{n} x_i
 $$
@@ -595,6 +597,8 @@ Common measures:
 
 The arithmetic average:
 
+x̄ = (Σ xi) / n
+
 $$
 \bar{x} = \frac{\sum x_i}{n}
 $$
@@ -759,6 +763,8 @@ sd(data_plus10)
 
 For independent variables:
 
+Var(X + Y) = Var(X) + Var(Y)
+
 $$
 \text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y)
 $$
@@ -907,6 +913,8 @@ direction of a linear relationship:
 ## Computing Pearson’s r
 
 The formula is:
+
+r = \[ Σ (xi − x̄)(yi − ȳ) \] / sqrt( Σ (xi − x̄)² · Σ (yi − ȳ)² )
 
 $$
 r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}
@@ -1070,9 +1078,13 @@ Probability measures **uncertainty**. It answers:
 
 ### Rules
 
+P(E) = (Number of favorable outcomes) / (Total outcomes)
+
 $$
 P(E) = \frac{\text{Number of favorable outcomes}}{\text{Total outcomes}}
 $$
+
+0 ≤ P(E) ≤ 1
 
 $$
 0 \le P(E) \le 1
@@ -1855,6 +1867,8 @@ If we take many samples and compute their means:
   $\mu$.  
 - The **standard error (SE)** is:
 
+SE = σ / √n
+
 $$
 SE = \frac{\sigma}{\sqrt{n}}
 $$
@@ -2047,6 +2061,8 @@ information.
 
 For sample variance:
 
+df = n − 1
+
 $$
 df = n - 1
 $$
@@ -2066,6 +2082,8 @@ $$
 A confidence interval provides a **range of plausible values** for a
 parameter:
 
+CI = Point Estimate ± Margin of Error
+
 $$
 CI = \text{Point Estimate} \pm \text{Margin of Error}
 $$
@@ -2078,11 +2096,15 @@ For a mean:
 
 Using known population SD:
 
+CI = x̄ ± z\* · (σ / √n)
+
 $$
 CI = \bar{x} \pm z^* \frac{\sigma}{\sqrt{n}}
 $$
 
 Using sample SD (t‑distribution):
+
+CI = x̄ ± t\* · (s / √n)
 
 $$
 CI = \bar{x} \pm t^* \frac{s}{\sqrt{n}}
