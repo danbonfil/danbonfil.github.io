@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Stats 0
-parent: ta
+parent: Teaching Assistant
 nav_order: 1
 ---
 
