@@ -44,13 +44,14 @@ Research Track: Quantitative Finance and Behavioral Economics
 
 ### FP&A Manager — Leisure Partners (01.2021–11.2022)
 
-Responsible for asset management of Grupo Decori properties, including Hilton Silao, Holiday Inn Orizaba, and Binniguenda Huatulco  
-Participated in asset management and distressed asset settlement between Grupo Valles and Banorte for Hilton Chihuahua  
+Responsible for asset management of Grupo Decori properties, including Hilton Silao, Holiday Inn Orizaba, and Binniguenda Huatulco
+Participated in asset management and distressed asset settlement between Grupo Valles and Banorte for Hilton Chihuahua
 Contributed to the evaluation and development of the Mixed-Use Complex Toreo and Novotel (168-room property)
-
+   
 **Financial Analyst (02.2017–08.2018)**  
-Conducted financial modeling and valuation for project planning and development  
-Contributed to the implementation of asset management strategies for tourism real estate projects
+Conducted comprehensive market research, focus groups, and surveys across hotel properties and regional markets for demand analysis
+Conducted financial modeling and valuation to support project planning, development, and delivery under EPC and turnkey structures
+Supported the origination, structuring, and execution of debt and equity transactions across the project lifecycle
 
 ---
 
@@ -63,10 +64,11 @@ Developed benchmarks for the payment ecosystem in Latin America
 
 ### Debt Capital Markets Analyst — Mexican Ministry of Finance, SHCP (01.2014–11.2015)
 
-Participated in debt issuance and liability management of foreign-denominated Federal Government debt  
-Contributed to the first 100-year sovereign euro-denominated bond issuance (4% due 2115 for €1.5 billion)  
-Conducted due diligence and prepared 8-10K reports for the SEC in coordination with legal counsel and the Central Bank  
-Coordinated, managed, and negotiated with major investment banks’ Fixed Income/FX departments
+Participated in structuring, issuance, and liability management of foreign-denominated Federal Government debt
+Contributed to the €1.5bn 100-year euro-denominated sovereign bond issuance (4\% due 2115)
+Conducted due diligence and prepared SEC 8-K/10-K disclosures in coordination with legal counsel and the Central Bank
+Coordinated and negotiated with major investment banks’ DCM, Fixed Income, and FX desks during issuance processes
+Assessed buy-side pricing and demand to achieve cost-efficient issuance, stable demand, and low volatility during placement
 
 ---
 
@@ -92,7 +94,7 @@ Chinese (Beginner: HSK3), Portuguese (Advanced)
 
 **Technical:**  
 Microsoft Office (Advanced), VBA (Basic), Stata (Intermediate), Python (Intermediate), R (Intermediate),  
-SQL (Intermediate), Power BI (Intermediate)
+LaTeX (Intermediate), SQL (Basic), Power BI (Basic)
 
 **Certifications:**  
 Mexican Association of Stock Market Intermediaries (AMIB: Series 1 & 3) Investment Funds and Investment Strategy Advisor  
