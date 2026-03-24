@@ -65,7 +65,7 @@ Developed benchmarks for the payment ecosystem in Latin America
 ### Debt Capital Markets Analyst — Mexican Ministry of Finance, SHCP (01.2014–11.2015)
 
 Participated in structuring, issuance, and liability management of foreign-denominated Federal Government debt
-Contributed to the €1.5bn 100-year euro-denominated sovereign bond issuance (4\% due 2115)
+Contributed to the €1.5bn 100-year euro-denominated sovereign bond issuance (4% due 2115)
 Conducted due diligence and prepared SEC 8-K/10-K disclosures in coordination with legal counsel and the Central Bank
 Coordinated and negotiated with major investment banks’ DCM, Fixed Income, and FX desks during issuance processes
 Assessed buy-side pricing and demand to achieve cost-efficient issuance, stable demand, and low volatility during placement
