@@ -38,8 +38,8 @@ Research Track: Quantitative Finance and Behavioral Economics
 Thesis: Financial Incentives and the Principal–Agent Model  
 
 ### BA in Financial Management — Academic Scholarship, Honorific Mention (2010–2015)  
-**Tecnológico de Monterrey - ITESM (Mexico City)**
-Research Track: Financial Statement Analysis and Fixed-Income Securities
+**Tecnológico de Monterrey - ITESM (Mexico City)**  
+Research Track: Financial Statement Analysis and Fixed-Income Securities  
 
 ---
 
