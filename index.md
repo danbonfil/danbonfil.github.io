@@ -27,18 +27,19 @@ Financial Analysis / Debt Capital Markets / Applied Economics / Political Econom
 ## Education
 
 ### PhD in Administration — Full Academic Scholarship (2022–2025)  
-**Fundação Getulio Vargas – FGV EBAPE (Brazil)**  
+**Fundação Getulio Vargas – FGV EBAPE (Rio de Janeiro, Brazil)**  
 Research Track: Institutions, Policy, and Government  
 Dissertation: Political Economy and Macroeconomic Shocks (Mixed Methods)  
 Teaching Assistant: *Statistics 0* and *AI for Business and Public Administration Research*
 
 ### MSc in Economics — Full Academic Scholarship, Honorific Mention (2018–2020)  
-**Peking University HSBC Business School – PKU PHBS (China)**  
+**Peking University HSBC Business School – PKU PHBS (Shenzhen, China)**  
 Research Track: Quantitative Finance and Behavioral Economics  
 Thesis: Financial Incentives and the Principal–Agent Model  
 
 ### BA in Financial Management — Academic Scholarship, Honorific Mention (2010–2015)  
-**Tec de Monterrey (Mexico)**
+**Tecnológico de Monterrey - ITESM (Mexico City)**
+Research Track: Financial Statement Analysis and Fixed-Income Securities
 
 ---
 
