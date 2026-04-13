@@ -2,7 +2,7 @@
 layout: default
 title: Publications
 #parent: CV
-nav_order: 3
+nav_order: 2
 ---
 
 # Publications

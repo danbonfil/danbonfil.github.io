@@ -1,12 +1,13 @@
 ---
 layout: default
 title: CV
-nav_order: 2
+#nav_order: 2
+nav_exclude: true
 ---
 
 <!-- Profile picture with styling -->
 <p align="center">
-  <img src="https://www.dropbox.com/scl/fi/hmz7vw9birf2otqdqmfq8/DABP_2025.jpg?rlkey=0omisjbtjvyc0c5i0uuapfh28&st=m9tqz5qz&raw=1" alt="Daniel Bonfil" width="200" style="border-radius: 50%;">
+  <img src="DABP_2026.png" alt="Daniel Bonfil" width="200" style="border-radius: 50%;">
 </p>
 
 <h1 align="center">Daniel Bonfil</h1>
@@ -20,7 +21,7 @@ nav_order: 2
 
 ## Areas of Interest
 
-Debt Capital Markets / Applied Economics / Political Economy / Asset Management
+Financial Analysis / Debt Capital Markets / Applied Economics / Political Economy / Asset Management
 
 ---
 
