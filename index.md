@@ -12,7 +12,7 @@ nav_order: 1
 <h1 align="center">Daniel Bonfil</h1>
 
 <p align="center">
-  <strong>PhD Institutions Policy & Government | MSc Economics</strong><br>
+  <strong>PhD Administration | MSc Economics</strong><br>
   Mexico City
 </p>
 
