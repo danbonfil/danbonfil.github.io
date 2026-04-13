@@ -2,7 +2,8 @@
 layout: default
 title: GitHub
 parent: Languages Library
-nav_order: 5
+#nav_order: 5
+nav_exclude: true
 ---
 
 # Git & GitHub

@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Languages Library
+title: Code Library
 nav_order: 3
 has_children: true
 ---
 
-# Languages Library
+# Code Library
 
-Select a language from the submenu.
+A personal knowledge and reference library that organizes my code, notes, and resources into a structured, easily searchable system for continuous learning and development.

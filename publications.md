@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Publications
-parent: CV
-nav_order: 1
+#parent: CV
+nav_order: 3
 ---
 
 # Publications

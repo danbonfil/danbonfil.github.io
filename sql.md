@@ -2,7 +2,8 @@
 layout: default
 title: SQL
 parent: Languages Library
-nav_order: 4
+#nav_order: 4
+nav_exclude: true
 ---
 
 # Introduction to SQL
