@@ -42,28 +42,34 @@ Thesis: Financial Incentives and the Principal–Agent Model
 
 ---
 
-## Professional Experience
+## Professional Experience  
+## (6 Year 5 Months)  
 
-### FP&A Manager — Leisure Partners (02.2021–12.2022;  1 Year 11 Months)
+### FP&A Manager — Leisure Partners  
+## (02.2021–12.2022;  1 Year 11 Months)  
 
 Responsible for asset management of Grupo Decori properties, including Hilton Silao, Holiday Inn Orizaba, and Binniguenda Huatulco  
 Participated in asset management and distressed asset settlement between Grupo Valles and Banorte for Hilton Chihuahua  
 Contributed to the evaluation and development of the Mixed-Use Complex Toreo and Novotel (168-room property)  
    
-### Financial Analyst — Leisure Partners (07.2017–07.2018;  1 Year 1 Month)  
+### Financial Analyst — Leisure Partners
+## (07.2017–07.2018;  1 Year 1 Month)  
+
 Supported the origination, structuring, and execution of debt and equity transactions across the project lifecycle  
 Conducted comprehensive market research, focus groups, and surveys across hotel properties and regional markets for demand analysis  
 Conducted financial modeling and valuation to support project planning, development, and delivery under EPC and turnkey structures  
 
 ---
 
-### Fintech Research Analyst — Grupo Carso, CTIN (02.2016–01.2017;  1 Year)
+### Fintech Research Analyst — Grupo Carso, CTIN  
+## (02.2016–01.2017;  1 Year)  
 
 Conducted research on Mexican payment providers and developed benchmarks for the Latin American fintech payments ecosystem  
 
 ---
 
-### Debt Capital Markets Analyst — Mexican Ministry of Finance, SHCP (11.2014–11.2015;  1 Year 11 Month)
+### Debt Capital Markets Analyst — Mexican Ministry of Finance, SHCP  
+## (11.2014–11.2015;  1 Year 1 Month)
 
 Participated in structuring, issuance, and liability management of foreign-denominated senior unsecured Federal Government debt  
 Contributed to the €1.5bn 100-year euro-denominated sovereign bond issuance (4\% due 2115)  
@@ -73,13 +79,15 @@ Assessed buy-side pricing and demand to achieve cost-efficient issuance, stable 
 
 ---
 
-### Cash-Flow Analyst (Internship) — Damco Logistics, AP Moller–Maersk (08.2012–03.2013; 8 Months)
+### Cash-Flow Analyst (Internship) — Damco Logistics – Maersk
+## (08.2012–03.2013; 8 Months)
 
 Supported cash-flow analysis for importing accounts and followed up on past-due portfolios  
 
 ---
 
-### Financial Planner (Internship) — Skandia, Old Mutual (10.2011–05.2012; 8 Months)
+### Financial Planner (Internship) — Skandia, Old Mutual
+## (10.2011–05.2012; 8 Months)
 
 Promoted financial investment vehicles, including savings/retirement plans and insurance policies  
 
