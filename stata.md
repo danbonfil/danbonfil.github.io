@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Stata
-parent: Languages Library
+parent: Code Library
 nav_order: 3
 ---
 
