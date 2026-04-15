@@ -20,8 +20,7 @@ nav_order: 1
 
 ## Areas of Interest
 
-Financial Analysis / Debt Capital Markets / Applied Economics / Political Economy / Asset Management
-
+Financial Analysis / Debt Capital Markets / Asset Management / Applied Economics / Political Economy
 ---
 
 ## Education
