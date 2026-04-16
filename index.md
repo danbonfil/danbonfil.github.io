@@ -41,7 +41,7 @@ Dissertation: Political Economy and Macroeconomic Shocks (Mixed Methods)
 Teaching Assistant: *Statistics 0* and *AI for Business and Public Administration Research*
 
 ---
-
+<!-- 
 ## Professional Experience  
 ### (6 Year 5 Months)  
 
@@ -114,4 +114,4 @@ Google Ads Search
 
 🔗 <a href="https://www.linkedin.com/in/danbonfil">LinkedIn</a> &nbsp;&nbsp;&nbsp; 📫 <a href="mailto:danbonfil@gmail.com">Email</a> &nbsp;&nbsp;&nbsp; 📄 <a href="https://www.dropbox.com/scl/fi/49wgitjikrljl269355nd/RS_DABP_2026.pdf?rlkey=n2xiaepg63e9skfxcyjpjg5ia&st=9xph3qre&dl=1">Download CV (PDF)</a> 
 
-</div>
+</div> -->
